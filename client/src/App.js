@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MyNavBar from './Navbar'; // Import your Navbar
+import Home from './Home';        // Import the new Home page
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    fetch('http://localhost:4040/api')
-      .then(res => res.json())
-      .then(data => setMessage(data.message));
-  }, []);
-
   return (
-    <div>
-      <h1>React + Node.js App</h1>
-      <p>Message from backend: {message}</p>
-    </div>
+    <Router>
+      <MyNavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* You can add more routes here later */}
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+

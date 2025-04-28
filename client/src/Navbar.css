@@ -1,0 +1,60 @@
+/* Navbar.css */
+
+/* Make navbar green background and text white */
+.custom-navbar {
+    background-color: #3ba27c; /* a nice green (SeaGreen), you can change to any shade you want */
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 1.1rem;
+  }
+  
+  /* Logo text */
+  .logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    padding-left: 8px;
+  }
+  
+  /* Centered nav links */
+  .nav-links .nav-link {
+    margin-right: 20px;
+    font-weight: 500;
+    color: white !important; /* Force text white */
+  }
+  
+  /* Dropdown titles also white */
+  .nav-dropdown .nav-link {
+    color: white !important;
+  }
+  
+  .nav-links .nav-link:hover {
+    text-decoration: underline;
+    color: white;
+  }
+
+  /* Dropdown menu items text color (when menu opens) */
+  .nav-dropdown .dropdown-item {
+    color: black;
+  }
+  
+  /* On hover, make menu items slightly gray */
+  .nav-dropdown .dropdown-item:hover {
+    background-color: #e2e2e2;
+  }
+  
+  /* Sign In / Sign Up button */
+  .signin-button {
+    font-size: 1rem;
+    padding: 6px 16px;
+    color: white;
+    border-color: white;
+  }
+  
+  /* On hover, slightly darken the button */
+  .signin-button:hover {
+    background-color: white;
+    color: #2e8b57;
+    border-color: white;
+  }
+  

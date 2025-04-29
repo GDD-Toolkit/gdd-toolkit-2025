@@ -1,6 +1,15 @@
+/* Slideshow container for slideshow */
+.slideshow-size
+{
+  position: relative;
+  margain: auto;
+  max-width: 1000px;
+}
+
 /* goLeft Button */
 .left-button
 {
+  cursor: pointer;
   Position: absolute;
   color: green !important;
   font-weight: bold;
@@ -13,12 +22,34 @@
 /* goRight Button */
 .right-button
 {
+  cursor: pointer;
   Position: absolute;
   color: green !important;
   font-weight: bold;
   font-size: 24px;
   padding-top: 16px;
   padding-bottom: 16px;
+  border: none;
+}
+
+/* Hovering over buttons make it a bit transparent */
+.right-button: hover, .left-button: hover
+{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.right-button
+{
+  right: 0; 
+}
+
+/* Dots at the bottom of slideshow to show currentIndex/image */
+.dots-bottom
+{
+  cursor: pointer;
+  height: 12px;
+  width: 18px;
+  background-color: #3ba27c;
   border: none;
 }
 
@@ -29,4 +60,13 @@
   font-weight: bold;
   color: #3ba27c; /* Same sea green */
   padding: 12px;
+}
+
+/* Displays current index of image. In this case, either 1, 2, 3, or 4 */
+currentImage-text
+{
+  Position: abolute;
+  font-size: 12px
+  color: white;
+  padding: 8px;
 }

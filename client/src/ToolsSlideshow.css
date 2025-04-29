@@ -1,5 +1,11 @@
-//goLeft Button
+/* goLeft Button */
 .left-button
 {
-  color
+  Position: absolute;
+  color: green;
+  font-weight: bold;
+  font-size: 24px;
+  padding-top = 16px;
+  padding-bottom = 16px;
+  border: none;
 }

@@ -13,8 +13,8 @@ function Home() {
   return (
     <div style={{ padding: "20px" }}>
       <Hero />
-      <h2>Home Page</h2>
-      <p>Message from backend: {message}</p>
+      <h2> </h2>
+      <p> </p>
     </div>
   );
 }

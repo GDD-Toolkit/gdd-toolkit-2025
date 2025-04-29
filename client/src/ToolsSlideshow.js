@@ -1,5 +1,5 @@
 
-import './TollsShlideshow.css';
+import './ToolsShlideshow.css';
 
 const images = [client/src/Human Centered Design Image, client/src/Worthwhile Development Image //The path of images to display
                 client/src/Ethics of Innovation Image, client/src/Ethics Canvas Image]; 

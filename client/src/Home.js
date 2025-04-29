@@ -12,8 +12,20 @@ function Home() {
 
   return (
     <div style={{ padding: "20px" }}>
+      <Hero />
       <h2>Home Page</h2>
       <p>Message from backend: {message}</p>
+    </div>
+  );
+}
+
+function Hero() {
+  return (
+    <div className="hero-container">
+      <div className='hero-text'>
+        <h1>What Does GDD Do?</h1>
+        <h2>Fire Global Development and design aims to explore the means towards achieving ethical development around the world.</h2>
+      </div>
     </div>
   );
 }

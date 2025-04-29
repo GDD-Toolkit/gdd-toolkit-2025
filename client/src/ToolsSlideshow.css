@@ -5,7 +5,18 @@
   color: green;
   font-weight: bold;
   font-size: 24px;
-  padding-top = 16px;
-  padding-bottom = 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border: none;
+}
+
+.right-button
+{
+  Position: absolute;
+  color: green;
+  font-weight: bold;
+  font-size: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   border: none;
 }

@@ -10,6 +10,7 @@
   border: none;
 }
 
+/* goRight Button */
 .right-button
 {
   Position: absolute;
@@ -19,4 +20,11 @@
   padding-top: 16px;
   padding-bottom: 16px;
   border: none;
+}
+
+.slide-header
+{
+  font-size: 36px;
+  font-weight: bold;
+  color: #3ba27c; 
 }

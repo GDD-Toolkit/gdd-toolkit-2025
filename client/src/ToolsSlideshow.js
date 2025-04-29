@@ -1,5 +1,7 @@
 const images = [client/src/Human Centered Design Image, client/src/Worthwhile Development Image //The path of images to display
                 client/src/Ethics of Innovation Image, client/src/Ethics Canvas Image]; 
+�PNG
+
 
 let currentIndex = 0; //Current Index of image displayed
 function slideChange(goLeft) //Function to move left or right

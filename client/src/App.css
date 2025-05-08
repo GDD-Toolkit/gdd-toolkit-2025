@@ -39,8 +39,8 @@
 
 .hero-container{
 position: relative;
-height: 100vh;
-background-image: url(Fire\ team\ picture.jpg);
+height: 100vh;        
+background-image: url("2025 GDD Students.JPG");
 background-size: cover;
 background-position: center;
 display: flex;

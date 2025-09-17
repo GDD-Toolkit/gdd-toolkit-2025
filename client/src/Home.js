@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import './Home.css';
+import ToolsSlideshow from './ToolsSlideshow.js';
 
 function Home() {
   const [message, setMessage] = useState('');
@@ -12,9 +14,8 @@ function Home() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <Hero />
-      <h2> </h2>
-      <p> </p>
+        <Hero />
+        {/* <ToolsSlideshow />  */}
     </div>
   );
 }

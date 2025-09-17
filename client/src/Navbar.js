@@ -22,6 +22,13 @@ function MyNavBar() {
           <Nav className="mx-auto nav-links">
             <Nav.Link href="/">Home</Nav.Link>
 
+            {/* Dropdown for Development Ethics */}
+            <NavDropdown title="Development Ethics" id="dev-ethics-dropdown" className="nav-dropdown">
+              <NavDropdown.Item href="/dev-ethics/what-is-dev-ethics">What is Development Ethics?</NavDropdown.Item>
+              <NavDropdown.Item href="/dev-ethics/worthwhile-dev">What is Worthwhile Development?</NavDropdown.Item>
+              <NavDropdown.Item href="/dev-ethics/capability-approach">What is the Capability Approach?</NavDropdown.Item>
+            </NavDropdown>
+
             {/* Dropdown for Case Studies */}
             <NavDropdown title="Case Studies" id="case-studies-dropdown" className="nav-dropdown">
               <NavDropdown.Item href="/case-studies/project1">Project 1</NavDropdown.Item>

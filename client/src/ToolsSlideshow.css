@@ -2,7 +2,7 @@
 .slideshow-size
 {
   position: relative;
-  margain: auto;
+  margin: auto;
   max-width: 1000px;
 }
 
@@ -66,7 +66,7 @@
 currentImage-text
 {
   Position: abolute;
-  font-size: 12px
+  font-size: 12px;
   color: white;
   padding: 8px;
 }

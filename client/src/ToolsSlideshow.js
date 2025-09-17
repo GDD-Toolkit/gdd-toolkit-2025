@@ -1,8 +1,8 @@
 
-import './ToolsShlideshow.css';
+import './ToolsSlideshow.css';
 
-const images = [client/src/Human Centered Design Image, client/src/Worthwhile Development Image //The path of images to display
-                client/src/Ethics of Innovation Image, client/src/Ethics Canvas Image]; 
+const images = ['../client/src/Human_Centered_Design_Image.png', '../client/src/Worthwhile_Development_Image.png', //The path of images to display
+                '../client/src/Ethics_of_Innovation_Image.png', '../client/src/Ethics_Canvas_Image.png']; 
 
 let currentIndex = 0; //Current Index of image displayed
 function slideChange(goLeft) //Function to move left or right

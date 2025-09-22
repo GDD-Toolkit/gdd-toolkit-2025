@@ -1,5 +1,5 @@
 
-.worthwhile-dev-container
+.worthwhile-dev-container 
 {
   max-width: 1000px
   margin: 40px auto;
@@ -8,7 +8,7 @@
   border-radius:8px;
 }
 
-.worthwhile-dev-h1
+.worthwhile-dev-container h1 //Biggest heading on top
 {
   font-size: 40px;
   text-align: center;
@@ -16,7 +16,7 @@
   margin-top: 30px;
 }
 
-.worthwhile-dev-container h2
+.worthwhile-dev-container h2 //Sub Heading preceding h1
 {
   font-size: 28px;
   text-align: center;
@@ -24,23 +24,24 @@
   margin-top: 30px;
 }
 
-.worthwhile-dev-container p
+.worthwhile-dev-container p //Small Intro paragraph below h2
 {
   font-size: 14px;
   font-family: "Times New Roman", Times, serif;
   margin-bottom: 40px;
 }
 
-.worthwhile-dev-container circle
+.worthwhile-dev-container circle //Circle used for interactive slideshow (will rotate)
 {
   width: 490px;
   height: 490px;
   positon: absolute;
+  transition: transform 0.7s ease;
   transform-style: preserve-3d;
   perspective: 1000px;
 }
 
-.worthwhile-dev-container images
+.worthwhile-dev-container images //Images that will be on the circle 
 {
   width: 70px;
   height: 70px;
@@ -48,5 +49,6 @@
   cursor: pointer;
 }
   
+
 
 

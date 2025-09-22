@@ -1,7 +1,7 @@
 
 .worthwhile-dev-container 
 {
-  max-width: 1000px
+  max-width: 1000px;
   margin: 40px auto;
   background-color: #ffffff;
   padding:20px 30px;
@@ -20,7 +20,7 @@
 {
   font-size: 28px;
   text-align: center;
-  border-bottom:2px 2px solid #3ba27c
+  border-bottom: 2px solid #3ba27c
   margin-top: 30px;
 }
 
@@ -35,13 +35,21 @@
 {
   width: 490px;
   height: 490px;
-  positon: absolute;
+  position: absolute;
   transition: transform 0.7s ease;
   transform-style: preserve-3d;
   perspective: 1000px;
 }
 
-.worthwhile-dev-container images //Images that will be on the circle 
+.worthwhile-dev-item //Every item (Image) will be placed relative to circle
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 -160px;
+}
+
+.worthwhile-dev-item img //Images that will be on the circle 
 {
   width: 70px;
   height: 70px;
@@ -49,6 +57,7 @@
   cursor: pointer;
 }
   
+
 
 
 

@@ -2,7 +2,7 @@ import heroImg from '@/assets/images/gdd-hero.jpg';
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[calc(100svh-56px)]">
+  <section className="relative w-full min-h-[calc(100svh-56px)] flex items-center justify-center">
       {/* Background image */}
      <img
         src={heroImg}
@@ -16,8 +16,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/45" />
 
       {/* Text overlay */}
-      <div className="relative z-10 flex items-center h-full">
-        <div className="max-w-6xl mx-auto px-4">
+      <div className="relative z-10 flex items-center justify-center h-full">
+  <div className="max-w-6xl mx-auto px-4 text-center" style={{ transform: 'translateY(-50%) translateY(-100px)' }}>
           <h1 className="text-white text-4xl md:text-5xl font-extrabold leading-tight">
             What Does GDD Do?
           </h1>

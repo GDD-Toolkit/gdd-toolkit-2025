@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import Button from '@/components/ui/button'
+import { useState, useRef, useEffect } from 'react'
+// ...existing code...
 
 type Menu = {
   label: string
@@ -38,12 +38,36 @@ const MENUS: Menu[] = [
 export default function Navbar() {
   const [open, setOpen] = useState<number | null>(null)
   const [mobile, setMobile] = useState(false)
+  const closeTimeoutRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current)
+      }
+    }
+  }, [])
+
+  const openMenu = (i: number) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current)
+      closeTimeoutRef.current = null
+    }
+    setOpen(i)
+  }
+
+  const scheduleClose = () => {
+    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+    closeTimeoutRef.current = window.setTimeout(() => setOpen(null), 150)
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b">
       <div className="bg-emerald-600 text-white">
         <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
-          <a href="/" className="font-extrabold tracking-tight">GDD</a>
+          <a href="/" className="font-extrabold tracking-tight">
+            <span className="px-3 py-1 rounded-xl text-sm font-medium bg-white/10 hover:bg-white/20 text-white border border-white/30">GDD</span>
+          </a>
 
           <nav className="hidden md:flex items-center gap-6 text-sm">
             {MENUS.map((m, i) =>
@@ -51,14 +75,18 @@ export default function Navbar() {
                 <div
                   key={m.label}
                   className="relative"
-                  onMouseEnter={() => setOpen(i)}
-                  onMouseLeave={() => setOpen(null)}
+                  onMouseEnter={() => openMenu(i)}
+                  onMouseLeave={() => scheduleClose()}
                 >
                   <button className="inline-flex items-center gap-1 hover:opacity-90">
                     {m.label} <span className="text-white/70">▾</span>
                   </button>
                   {open === i && (
-                    <div className="absolute left-0 mt-2 w-56 rounded-xl bg-white text-gray-900 shadow-lg border">
+                    <div
+                      className="absolute left-0 mt-2 w-56 rounded-xl bg-white text-gray-900 shadow-lg border"
+                      onMouseEnter={() => openMenu(i)}
+                      onMouseLeave={() => scheduleClose()}
+                    >
                       <ul className="py-2">
                         {m.items.map((it) => (
                           <li key={it.href}>
@@ -71,18 +99,19 @@ export default function Navbar() {
                     </div>
                   )}
                 </div>
-              ) : (
+                ) : (
                 <a key={m.label} href={m.href} className="hover:opacity-90">
-                  {m.label}
+                  {m.label === 'Home' || m.label === 'Contacts' ? (
+                    <span className="px-3 py-1 rounded-xl text-sm font-medium bg-white/10 hover:bg-white/20 text-white border border-white/30">{m.label}</span>
+                  ) : (
+                    m.label
+                  )}
                 </a>
               )
             )}
           </nav>
 
-          <div className="hidden md:block">
-            <a href="/signin" className="text-sm text-white/90 hover:text-white mr-2">Sign In</a>
-            <Button onClick={() => (window.location.href = '/signup')}>Sign Up</Button>
-          </div>
+          <div className="hidden md:block" />
 
           <button
             className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border border-white/30"
@@ -113,7 +142,11 @@ export default function Navbar() {
                 </details>
               ) : (
                 <a key={m.label} href={m.href} className="block py-2">
-                  {m.label}
+                  {m.label === 'Home' || m.label === 'Contacts' ? (
+                    <span className="inline-block px-3 py-1 rounded-xl text-sm font-medium bg-black text-white">{m.label}</span>
+                  ) : (
+                    m.label
+                  )}
                 </a>
               )
             )}

@@ -14,7 +14,7 @@ const MENUS: Menu[] = [
     items: [
       { label: 'Ethics Canvas', href: '/ethics-canvas' },
       { label: 'Worthwhile Development', href: '/worthwhile-development' },
-      { label: 'Human-Centered Design', href: '/hcd' }
+      { label: 'Capability Approach', href: '/capability-approach' }
     ]
   },
   {

@@ -1,8 +1,10 @@
+import Timeline from "./Timeline";
+
 export default function CapabilityApproach() {
   return (
     <main className="max-w-5xl mx-auto px-4 py-20 space-y-16">
     <section className="bg-green-100 py-10">
-       {
+       {      
         <section>
         <h1 className="text-4xl font-extrabold mb-4">The Capability Approach</h1>
         <p className="text-lg text-black-600 max-w-3xl">
@@ -71,30 +73,21 @@ export default function CapabilityApproach() {
       </div>
       </section>
 
-      <section className="bg-green-100 py-10">
+      <section className="bg-green-100 py-5">
        {
         <section>
         <h2 className="text-4xl font-extrabold mb-4">The Human Rights Based Approach</h2>
-        <p className = ""> NOT YET CHANGED. WAITING FOR INPUT</p>
+        <p>This approach to global development, a subset to the Capability Approach, aims to ensure that human rights are considered and respected when a country undergoes development.
+          Below is a small timeline illustrating how this approach came to be. 
+        </p>
         </section>
        }
       </section>
 
       <section>
         <p>
-            <div className = "">
-                The Human Rights-based approach to global development, a subset to the Capability Approach, aims to ensure that human rights are considered and respected when a country undergoes development. 
-                In 1948, the first international manuscript that outlines fundamental human rights was published by the United Nations (UN). 
-                This document was called the  Universal Declaration of Human Rights and merely outlined standards for human rights from an international perspective. 
-                This declaration consists of 30 articles, setting forth fundamental human rights such as equality before the law, protection from cruel punishment, the right to leisure, and many more. 
-                While the Universal Declaration of Human Rights established a list of rights that should be guaranteed to the public, it didn’t have any direct application to global development. 
-                In 1997, the UN underwent a reform which switched their stance from a “basic needs” approach to the Human Rights-based approach. 
-                This effectively switched the focus of global development from the beneficiaries to the general human population. 
-                In 2003, the UN Common Understanding on a Human-Rights-Based Approach (HRBA) to Development Cooperation was adopted, which officially put the focus on the people. 
-                In this document, the UN sets forth elements that ensure proper consideration of human rights when developing a nation. 
-                Some of these elements include the simple recognition of human rights as a goal of global development rather than just a supporting factor. 
-                Other elements include recognizing the people as key actors, “locally owned” development, situation analysis, and using human rights as a guide.
-            </div>
+            <Timeline> 
+            </Timeline>
         </p>
       </section>
     </main>

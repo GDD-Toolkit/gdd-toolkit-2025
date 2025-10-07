@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-
+import { motion, AnimatePresence } from "framer-motion";
 type Tool = {
   title: string;
   subtitle: string;
@@ -59,26 +59,36 @@ export default function ToolsCarousel() {
 
         <div className="relative mt-10">
           {/* card */}
-          <div className="mx-auto max-w-2xl rounded-2xl border border-gray-200 bg-white p-10 shadow-sm">
-            <div className="flex flex-col items-center gap-4 text-center">
-              {/* icon placeholder */}
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-50">
-                <span className="text-2xl" role="img" aria-label="tool">
-                  🧭
-                </span>
-              </div>
+          <div className="relative mx-auto max-w-2xl h-[260px] overflow-hidden flex items-center justify-center">
+          <AnimatePresence mode="wait">
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, x: 100 }}
+           animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="rounded-2xl border border-gray-200 bg-white p-10 shadow-md w-full flex flex-col items-center gap-4 text-center absolute"
+          >
+      {/* icon */}
+          <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-50">
+          <span className="text-2xl" role="img" aria-label="tool">
+          🧭
+          </span>
+        </div>
 
-              <a
-                href={tools[idx].href}
-                className="text-lg md:text-xl font-semibold text-emerald-800 underline underline-offset-4 hover:text-emerald-600"
-              >
-                {tools[idx].title}
-              </a>
-              <p className="text-sm md:text-base text-gray-600">
-                {tools[idx].subtitle}
-              </p>
-            </div>
-          </div>
+      {/* title & subtitle */}
+      <a
+        href={tools[idx].href}
+        className="text-lg md:text-xl font-semibold text-emerald-800 underline underline-offset-4 hover:text-emerald-600"
+      >
+        {tools[idx].title}
+      </a>
+      <p className="text-sm md:text-base text-gray-600">
+        {tools[idx].subtitle}
+      </p>
+    </motion.div>
+    </AnimatePresence>
+    </div>
 
           {/* arrows */}
           <button

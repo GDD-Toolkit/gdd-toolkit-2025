@@ -43,14 +43,14 @@ export default function CapabilityApproach() {
       <section>
       <div className="flex justify-between items-center mt-8">
         <ul className="list-disc pl-6 text-black-700 space-y-2">
-          <li><strong>Functionings:</strong> His research focused on societal inequalities.</li>
-          <li><strong>Capabilities:</strong> Views poverty and underdeveloped communities as a consequence of capability deprivations.</li>
-          <li><strong>Agency:</strong> He believed development was too complex for a single path to improve everyone’s lives.</li>
+          <li> His research focused on societal inequalities.</li>
+          <li> Views poverty and underdeveloped communities as a consequence of capability deprivations.</li>
+          <li> He believed development was too complex for a single path to improve everyone’s lives.</li>
         </ul>
       <ul className="list-disc pl-6 text-black-700 space-y-2">
-          <li><strong>Functionings:</strong> Helped form the two major schools of thought in the human development and capabilities field.</li>
-          <li><strong>Capabilities:</strong> Her philosophy is rooted in ten explicitly stated central capabilities needed for development. </li>
-          <li><strong>Agency:</strong> Believed that Satisfying these central capabilities, which are physical, social, and, emotional, can be a way to achieve justice.</li>
+          <li> Helped form the two major schools of thought in the human development and capabilities field.</li>
+          <li> Her philosophy is rooted in ten explicitly stated central capabilities needed for development. </li>
+          <li> Believed that Satisfying these central capabilities, which are physical, social, and, emotional, can be a way to achieve justice.</li>
         </ul>
       </div>
       </section>

@@ -12,7 +12,7 @@ const MENUS: Menu[] = [
   {
     label: 'Development Ethics',
     items: [
-      { label: 'Ethics Canvas', href: '/ethics-canvas' },
+      { label: 'What is Development Ethics', href: '/development-ethics' },
       { label: 'Worthwhile Development', href: '/worthwhile-development' },
       { label: 'Capability Approach', href: '/capability-approach' }
     ]

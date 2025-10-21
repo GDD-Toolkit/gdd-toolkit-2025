@@ -86,8 +86,7 @@ export default function CapabilityApproach() {
 
       <section>
         <p>
-            <Timeline> 
-            </Timeline>
+            <Timeline/> 
         </p>
       </section>
     </main>

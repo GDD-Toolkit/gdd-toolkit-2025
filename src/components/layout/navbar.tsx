@@ -18,6 +18,15 @@ const MENUS: Menu[] = [
     ]
   },
   {
+    label: 'Tools',
+    items: [
+      { label: 'Ethics of Innovation', href: '/ethics-of-innovation' },
+      { label: 'Human Centered Design', href: '/human-centered-design' },
+      { label: 'Project Planning', href: '/project-planning' },
+      { label: 'Project Evaluation', href: '/project-evaluation' }
+    ]
+  },
+  {
     label: 'Case Studies',
     items: [
       { label: 'Health', href: '/case-studies/health' },

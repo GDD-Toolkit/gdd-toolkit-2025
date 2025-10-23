@@ -31,52 +31,56 @@ export default function CapabilityApproach() {
         </motion.p>
       </section>
 
+    {/*Pioneers Grids + Info*/}
     <div className="max-w-6xl mx-auto px-4 py-20 space-y-16">
-      {/*Pioneers Grids + Info*/}
       <div className = "relative -mt-8 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100 md:p-8">
-        <h2 className = "text-3xl font-semibold text-center text-emerald-800"> Pioneers Of This Approach</h2>
+        <h2 className = "text-4xl text-center text-emerald-800 font-semibold"> Pioneers Of This Approach</h2>
       </div>
         <section>
           <div className="grid grid-cols-2 gap-6 mt-8">
-            <div className="relative -mt-8 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100 md:p-8 text-center">
-              <h2 className="text-2xl font-bold mb-4 text-emerald-800">Amartya Sen</h2>
+            <div className="relative -mt-8 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100 md:p-8">
+              <h2 className="text-2xl font-semibold mb-4 text-emerald-800 text-center">
+                Amartya Sen
+              </h2>
                 <img
                   src="https://www.reachivy.com/wp-content/uploads/2018/06/Amartya-Sen.png"
                   alt="Capabilities concept"
-                  className="w-full h-64 object-cover rounded-xl shadow-md"
+                  className="w-full h-64 object-cover object-center object-[80%_0%] rounded-xl shadow-md"
                 />
+                <ul className="list-disc pl-6 text-gray space-y-3 mt-8">
+                  <li> His research focused on societal inequalities.</li>
+                  <li> Views poverty and underdeveloped communities as a consequence of capability deprivations.</li>
+                  <li> He believed development was too complex for a single path to improve everyone’s lives.</li>
+                </ul>
             </div>
-            <div className = "relative -mt-8 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100 md:p-8 text-center">
-              <h2 className="text-2xl font-bold mb-4 text-emerald-800">Martha Nussbaum</h2>
+            <div className = "relative -mt-8 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100 md:p-8">
+              <h2 className="text-2xl font-semibold mb-4 text-emerald-800 text-center">
+                Martha Nussbaum
+              </h2>
                 <img
                   src="https://daily.jstor.org/wp-content/uploads/2018/07/martha_nussbaum_alt_1050x700.jpg"
                   alt="Freedom concept"
-                  className="w-full h-64 object-cover rounded-xl shadow-md"
+                  className="w-full h-64 object-cover object-[80%_0%] rounded-xl shadow-md"
               />
+              <ul className="list-disc pl-6 text-gray space-y-3 mt-8">
+                <li> Helped form the two major schools of thought in the human development and capabilities field.</li>
+                <li> Her philosophy is rooted in ten explicitly stated central capabilities needed for development. </li>
+                <li> Believed that Satisfying these central capabilities, which are physical, social, and, emotional, can be a way to achieve justice.</li>
+              </ul>
             </div>
           </div>
         </section>
-      <div className="flex justify-between items-center mt-8">
-        <ul className="list-disc pl-6 text-black-700 space-y-3">
-          <li> His research focused on societal inequalities.</li>
-          <li> Views poverty and underdeveloped communities as a consequence of capability deprivations.</li>
-          <li> He believed development was too complex for a single path to improve everyone’s lives.</li>
-        </ul>
-        <ul className="list-disc pl-6 text-black-700 space-y-3">
-          <li> Helped form the two major schools of thought in the human development and capabilities field.</li>
-          <li> Her philosophy is rooted in ten explicitly stated central capabilities needed for development. </li>
-          <li> Believed that Satisfying these central capabilities, which are physical, social, and, emotional, can be a way to achieve justice.</li>
-        </ul>
-      </div>
       
       {/*Video*/}
       <section>
-        <h2 className="relative -mt-1 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100 md:p-8 text-2xl font-semibold mb-3 text-center text-emerald-800">
-          Capability Approach Explained By The Training & Knowledge Module Team
-        </h2>
-        <p className="text-black-600 mb-4">
-          The following video helps explain the definition of Capability Approach along with examples.
-        </p>
+        <div className="relative -mt-1 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100 md:p-8">
+          <h2 className = "text-3xl text-center text-emerald-800 font-semibold">
+            Capability Approach Explained By The Training & Knowledge Module Team
+          </h2>
+          <h3 className="text-gray mt-4 text-center">
+            The following video helps explain the definition of Capability Approach along with examples.
+          </h3>
+        </div>
         <div className="w-full mt-6 rounded-xl shadow-lg">
           <video
             controls
@@ -86,17 +90,16 @@ export default function CapabilityApproach() {
             src="http://18.233.151.140/wp-content/uploads/2024/11/Cabability-approach-video.mp4"
             type="video/mp4"
           />
-          Your browser does not support the video tag.
           </video>
         </div>
       </section>
 
       {/*Intro Before Timeline*/}
-      <section className="relative -mt-8 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100 md:p-8">
+      <section className="relative mt-40 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100 md:p-8">
        {
         <section>
-        <h2 className="text-4xl font-extrabold mb-4 text-center text-emerald-800">The Human Rights Based Approach
-
+        <h2 className="text-4xl font-semibold mb-4 text-center text-emerald-800">
+          The Human Rights Based Approach
         </h2>
         <h3 className = "text-black text-center"> This approach to global development, a subset to the Capability Approach, aims to ensure that human rights are considered and respected when a country undergoes development.
           Below is a small timeline illustrating how this approach came to be. 

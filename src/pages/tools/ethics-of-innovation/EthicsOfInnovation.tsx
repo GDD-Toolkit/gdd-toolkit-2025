@@ -70,7 +70,7 @@ const EthicsOfInnovation: React.FC = () => {
             <section className="principles-section">
                 <div className="principles-grid">
                     {[
-                        { title: "Design with the User", img: "src/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/user", 
+                        { title: "Design with the User", img: "../../src/assets/images/design-user.png", link: "/ethics-of-innovation/user", 
                         text: "User-centered design begins with understanding the people you are designing for by utilizing conversation, observation, and co-creation." },
                         { title: "Understanding the Existing Ecosystems", img: "src/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/ecosystem", 
                         text: "Ecosystems are the sum of many factors such as culture, economy, political environment and infrastructure to name a few." },

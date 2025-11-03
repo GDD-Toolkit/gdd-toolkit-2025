@@ -1,4 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X, ChevronDown } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 type Menu = {
   label: string
@@ -43,13 +46,10 @@ const MENUS: Menu[] = [
   { label: 'Contacts', href: '/contacts' }
 ]
 
-// shared class so ALL top-level items look the same
-const BASE_BTN =
-  'inline-flex items-center gap-1 px-4 py-2 rounded-2xl bg-black !text-white border border-black/80 hover:bg-neutral-800 transition-colors';
-
 export default function Navbar() {
   const [open, setOpen] = useState<number | null>(null)
   const [mobile, setMobile] = useState(false)
+  const [mobileOpenMenu, setMobileOpenMenu] = useState<number | null>(null)
   const closeTimeoutRef = useRef<number | null>(null)
 
   useEffect(() => {
@@ -68,24 +68,81 @@ export default function Navbar() {
 
   const scheduleClose = () => {
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
-    closeTimeoutRef.current = window.setTimeout(() => setOpen(null), 150)
+    closeTimeoutRef.current = window.setTimeout(() => setOpen(null), 200)
+  }
+
+  const dropdownVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: -8,
+      scale: 0.96
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1
+    },
+    exit: {
+      opacity: 0,
+      y: -8,
+      scale: 0.96
+    }
+  }
+
+  const mobileMenuVariants = {
+    hidden: {
+      height: 0,
+      opacity: 0
+    },
+    visible: {
+      height: 'auto',
+      opacity: 1
+    },
+    exit: {
+      height: 0,
+      opacity: 0
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -8 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.04,
+        duration: 0.2
+      }
+    })
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b">
-      <div className="bg-emerald-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center overflow-visible">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/60 shadow-sm">
+      {/* Subtle gradient accent at top */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-slate-700 via-emerald-600 to-slate-700" />
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
           {/* BRAND */}
-          <a href="/" className="inline-flex items-center mr-4 shrink-0 py-2" aria-label="GDD Home">
-            <img
+          <motion.a 
+            href="/" 
+            className="inline-flex items-center shrink-0 group"
+            aria-label="GDD Home"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <motion.img
               src="/brand/gdd-logo.svg"
               alt="Toolkit"
-              className="block h-14 w-auto select-none pointer-events-none"
+              className="block h-10 w-auto select-none pointer-events-none"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             />
-          </a>
+          </motion.a>
 
-          {/* NAV MENU */}
-          <nav className="hidden md:flex items-center gap-6 text-sm ml-auto">
+          {/* DESKTOP NAV MENU */}
+          <nav className="hidden lg:flex items-center gap-2">
             {MENUS.map((m, i) =>
               m.items ? (
                 <div
@@ -94,84 +151,193 @@ export default function Navbar() {
                   onMouseEnter={() => openMenu(i)}
                   onMouseLeave={scheduleClose}
                 >
-                  {/* dropdown trigger styled exactly like normal links */}
-                  <button className={BASE_BTN}>
-                    {m.label} <span className="text-white/70">▾</span>
-                  </button>
+                  <motion.div
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.04, duration: 0.3 }}
+                  >
+                    <Button className="group">
+                      <span className="relative z-10">{m.label}</span>
+                      <motion.span
+                        className="relative z-10"
+                        animate={{ rotate: open === i ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ChevronDown className="w-3.5 h-3.5 text-slate-500 group-hover:text-emerald-600" />
+                      </motion.span>
+                    </Button>
+                  </motion.div>
 
-                  {open === i && (
-                    <div
-                      className="absolute left-0 mt-2 w-56 rounded-xl bg-white text-gray-900 shadow-lg border"
-                      onMouseEnter={() => openMenu(i)}
-                      onMouseLeave={scheduleClose}
-                    >
-                      <ul className="py-2">
-                        {m.items.map((it) => (
-                          <li key={it.href}>
-                            <a className="block px-3 py-2 hover:bg-gray-50 rounded-lg" href={it.href}>
-                              {it.label}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                  <AnimatePresence>
+                    {open === i && (
+                      <motion.div
+                        variants={dropdownVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        transition={{ duration: 0.2 }}
+                        className="absolute left-0 mt-2 w-72 rounded-xl bg-white shadow-xl border border-gray-200/80 overflow-hidden"
+                        style={{ boxShadow: '0 10px 40px -10px rgba(0, 0, 0, 0.15)' }}
+                        onMouseEnter={() => openMenu(i)}
+                        onMouseLeave={scheduleClose}
+                      >
+                        <div className="py-2">
+                          {m.items.map((it, idx) => (
+                            <motion.a
+                              key={it.href}
+                              href={it.href}
+                              className="relative block px-5 py-3 text-sm text-slate-700 hover:text-slate-900 hover:bg-slate-50/80 transition-colors duration-150 group/item"
+                              variants={itemVariants}
+                              initial="hidden"
+                              animate="visible"
+                              custom={idx}
+                              whileHover={{ x: 2 }}
+                            >
+                              <span className="flex items-center gap-3">
+                                <motion.span
+                                  className="w-1 h-1 rounded-full bg-emerald-600"
+                                  initial={{ opacity: 0, scale: 0 }}
+                                  whileHover={{ opacity: 1, scale: 1 }}
+                                  transition={{ duration: 0.2 }}
+                                />
+                                <span className="flex-1">{it.label}</span>
+                              </span>
+                              <motion.div
+                                className="absolute left-0 top-0 bottom-0 w-1 bg-emerald-600"
+                                initial={{ scaleY: 0 }}
+                                whileHover={{ scaleY: 1 }}
+                                transition={{ duration: 0.2 }}
+                                style={{ originY: 0 }}
+                              />
+                            </motion.a>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               ) : (
-                // simple links (Home, Contacts) now share identical classes
-                <a key={m.label} href={m.href} className={BASE_BTN}>
+                <motion.a
+                  key={m.label}
+                  href={m.href}
+                  className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 px-5 py-2.5 bg-white !text-slate-800 border border-gray-200 shadow-sm hover:bg-emerald-50 hover:border-emerald-500 hover:!text-emerald-700 hover:shadow-md cursor-pointer"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.04, duration: 0.3 }}
+                >
                   {m.label}
-                </a>
+                </motion.a>
               )
             )}
           </nav>
 
           {/* MOBILE TOGGLE */}
-          <button
-            className="md:hidden ml-auto inline-flex items-center justify-center w-9 h-9 rounded-lg border border-white/30"
-            onClick={() => setMobile((v) => !v)}
-            aria-label="Toggle menu"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            ☰
-          </button>
+            <Button
+              size="icon"
+              className="lg:hidden"
+              onClick={() => setMobile((v) => !v)}
+              aria-label="Toggle menu"
+            >
+              <motion.div
+                animate={{ rotate: mobile ? 90 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {mobile ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </motion.div>
+            </Button>
+          </motion.div>
         </div>
       </div>
 
       {/* MOBILE NAV */}
-      {mobile && (
-        <div className="md:hidden bg-white border-b">
-          <div className="px-4 py-3 space-y-2 text-sm">
-            {MENUS.map((m) =>
-              m.items ? (
-                <details key={m.label}>
-                  <summary className="cursor-pointer py-2">{m.label}</summary>
-                  <ul className="pl-3 py-1 space-y-1">
-                    {m.items.map((it) => (
-                      <li key={it.href}>
-                        <a className="block px-2 py-1 rounded hover:bg-gray-50" href={it.href}>
-                          {it.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              ) : (
-                <a
-                  key={m.label}
-                  href={m.href}
-                  className="inline-block px-3 py-1 rounded-lg text-sm font-medium hover:bg-gray-100 text-gray-900 transition-colors"
-                >
-                  {m.label}
-                </a>
-              )
-            )}
-            <div className="pt-2 border-t">
-              <a href="/signin" className="block py-2">Sign In</a>
-              <a href="/signup" className="block py-2">Sign Up</a>
+      <AnimatePresence>
+        {mobile && (
+          <motion.div
+            variants={mobileMenuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={{ duration: 0.25 }}
+            className="lg:hidden bg-white border-t border-gray-200/60 overflow-hidden"
+          >
+            <div className="px-4 py-3 space-y-2">
+              {MENUS.map((m, idx) =>
+                m.items ? (
+                  <div key={m.label} className="space-y-2">
+                    <Button
+                      variant="default"
+                      className="w-full justify-between"
+                      onClick={() => setMobileOpenMenu(mobileOpenMenu === idx ? null : idx)}
+                    >
+                      <span>{m.label}</span>
+                      <motion.span
+                        animate={{ rotate: mobileOpenMenu === idx ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ChevronDown className="w-4 h-4 text-slate-500" />
+                      </motion.span>
+                    </Button>
+                    <AnimatePresence>
+                      {mobileOpenMenu === idx && (
+                        <motion.ul
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="overflow-hidden pl-2 space-y-2"
+                        >
+                          {m.items.map((it, itemIdx) => (
+                            <motion.li
+                              key={it.href}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: itemIdx * 0.03 }}
+                            >
+                              <Button
+                                variant="default"
+                                className="w-full justify-start ml-2"
+                                onClick={() => {
+                                  setMobile(false)
+                                  window.location.href = it.href
+                                }}
+                              >
+                                <span className="w-1 h-1 rounded-full bg-emerald-600 mr-2" />
+                                {it.label}
+                              </Button>
+                            </motion.li>
+                          ))}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <motion.div
+                    key={m.label}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.04 }}
+                  >
+                    <Button variant="default" className="w-full" onClick={() => {
+                      setMobile(false)
+                      window.location.href = m.href || '/'
+                    }}>
+                      {m.label}
+                    </Button>
+                  </motion.div>
+                )
+              )}
             </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

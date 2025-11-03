@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react'
-// ...existing code...
 
 type Menu = {
   label: string
@@ -44,6 +43,10 @@ const MENUS: Menu[] = [
   { label: 'Contacts', href: '/contacts' }
 ]
 
+// shared class so ALL top-level items look the same
+const BASE_BTN =
+  'inline-flex items-center gap-1 px-4 py-2 rounded-2xl bg-black !text-white border border-black/80 hover:bg-neutral-800 transition-colors';
+
 export default function Navbar() {
   const [open, setOpen] = useState<number | null>(null)
   const [mobile, setMobile] = useState(false)
@@ -51,9 +54,7 @@ export default function Navbar() {
 
   useEffect(() => {
     return () => {
-      if (closeTimeoutRef.current) {
-        clearTimeout(closeTimeoutRef.current)
-      }
+      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
     }
   }, [])
 
@@ -73,28 +74,36 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b">
       <div className="bg-emerald-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
-          <a href="/" className="font-extrabold tracking-tight">
-            <span className="px-3 py-1 rounded-xl text-sm font-medium bg-white/10 hover:bg-white/20 text-white border border-white/30">GDD</span>
+        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center overflow-visible">
+          {/* BRAND */}
+          <a href="/" className="inline-flex items-center mr-4 shrink-0 py-2" aria-label="GDD Home">
+            <img
+              src="/brand/gdd-logo.svg"
+              alt="Toolkit"
+              className="block h-14 w-auto select-none pointer-events-none"
+            />
           </a>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm">
+          {/* NAV MENU */}
+          <nav className="hidden md:flex items-center gap-6 text-sm ml-auto">
             {MENUS.map((m, i) =>
               m.items ? (
                 <div
                   key={m.label}
                   className="relative"
                   onMouseEnter={() => openMenu(i)}
-                  onMouseLeave={() => scheduleClose()}
+                  onMouseLeave={scheduleClose}
                 >
-                  <button className="inline-flex items-center gap-1 hover:opacity-90">
+                  {/* dropdown trigger styled exactly like normal links */}
+                  <button className={BASE_BTN}>
                     {m.label} <span className="text-white/70">▾</span>
                   </button>
+
                   {open === i && (
                     <div
                       className="absolute left-0 mt-2 w-56 rounded-xl bg-white text-gray-900 shadow-lg border"
                       onMouseEnter={() => openMenu(i)}
-                      onMouseLeave={() => scheduleClose()}
+                      onMouseLeave={scheduleClose}
                     >
                       <ul className="py-2">
                         {m.items.map((it) => (
@@ -108,22 +117,18 @@ export default function Navbar() {
                     </div>
                   )}
                 </div>
-                ) : (
-                <a key={m.label} href={m.href} className="hover:opacity-90">
-                  {m.label === 'Home' || m.label === 'Contacts' ? (
-                    <span className="px-3 py-1 rounded-xl text-sm font-medium bg-white/10 hover:bg-white/20 text-white border border-white/30">{m.label}</span>
-                  ) : (
-                    m.label
-                  )}
+              ) : (
+                // simple links (Home, Contacts) now share identical classes
+                <a key={m.label} href={m.href} className={BASE_BTN}>
+                  {m.label}
                 </a>
               )
             )}
           </nav>
 
-          <div className="hidden md:block" />
-
+          {/* MOBILE TOGGLE */}
           <button
-            className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border border-white/30"
+            className="md:hidden ml-auto inline-flex items-center justify-center w-9 h-9 rounded-lg border border-white/30"
             onClick={() => setMobile((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -132,6 +137,7 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* MOBILE NAV */}
       {mobile && (
         <div className="md:hidden bg-white border-b">
           <div className="px-4 py-3 space-y-2 text-sm">
@@ -150,12 +156,12 @@ export default function Navbar() {
                   </ul>
                 </details>
               ) : (
-                <a key={m.label} href={m.href} className="block py-2">
-                  {m.label === 'Home' || m.label === 'Contacts' ? (
-                    <span className="inline-block px-3 py-1 rounded-xl text-sm font-medium bg-black text-white">{m.label}</span>
-                  ) : (
-                    m.label
-                  )}
+                <a
+                  key={m.label}
+                  href={m.href}
+                  className="inline-block px-3 py-1 rounded-lg text-sm font-medium hover:bg-gray-100 text-gray-900 transition-colors"
+                >
+                  {m.label}
                 </a>
               )
             )}

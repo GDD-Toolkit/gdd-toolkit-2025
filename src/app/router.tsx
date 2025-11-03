@@ -13,6 +13,7 @@ const ReuseImprove = lazy(() => import("@/pages/tools/ethics-of-innovation/Reuse
 const AddressSecurity = lazy(() => import("@/pages/tools/ethics-of-innovation/AddressSecurity"));
 const Collaborative = lazy(() => import("@/pages/tools/ethics-of-innovation/Collaborative"));
 const HumanCenteredDesign = lazy(() => import("@/pages/tools-remaining/HumanCenteredDesign"));
+const ProjectPlanningHomepage = lazy(() => import("@/pages/project-planning/homepage"));
 
 
 const router = createBrowserRouter([
@@ -30,7 +31,8 @@ const router = createBrowserRouter([
       { path: "ethics-of-innovation/reuse", element: <ReuseImprove />},
       { path: "ethics-of-innovation/privacy", element: <AddressSecurity />},
       { path: "ethics-of-innovation/collaboration", element: <Collaborative />},
-      { path: "human-centered-design", element: <HumanCenteredDesign />}
+      { path: "human-centered-design", element: <HumanCenteredDesign />},
+      { path: "project-planning", element: <ProjectPlanningHomepage />}
     ],
   },
 ]);

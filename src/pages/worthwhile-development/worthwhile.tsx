@@ -145,7 +145,7 @@ export default function Worthwhile() {
 
   // Underline animation for Seven Goals
   const sevenGoalsRef = useRef<HTMLHeadingElement>(null);
-  const [underlineVisible, setUnderlineVisible] = useState(false);
+  const [, setUnderlineVisible] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       if (sevenGoalsRef.current) {

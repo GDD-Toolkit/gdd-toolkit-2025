@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Logo from '@/components/Logo'
 
 type Menu = {
   label: string
@@ -117,7 +118,12 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/60 shadow-sm">
+    <motion.header 
+      className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/60 shadow-sm"
+      initial={{ y: -12, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.33, duration: 0.4, ease: 'easeOut' }}
+    >
       {/* Subtle gradient accent at top */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-slate-700 via-emerald-600 to-slate-700" />
       
@@ -131,14 +137,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <motion.img
-              src="/brand/gdd-logo.svg"
-              alt="Toolkit"
-              className="block h-10 w-auto select-none pointer-events-none"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            />
+            <Logo size="sm" />
           </motion.a>
 
           {/* DESKTOP NAV MENU */}
@@ -338,6 +337,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   )
 }

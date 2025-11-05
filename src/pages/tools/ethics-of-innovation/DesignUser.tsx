@@ -39,7 +39,7 @@ const DesignUser: React.FC = () => {
                     <div className="principles-summary-content">
                     <div className="principles-summary-image-wrapper">
                         <img
-                        src="../../src/assets/images/design-user.png"
+                        src="/assets/images/design-user.png"
                         alt="Design Principles Summary"
                         className="principles-summary-image"
                         />

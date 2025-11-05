@@ -70,23 +70,23 @@ const EthicsOfInnovation: React.FC = () => {
             <section className="principles-section">
                 <div className="principles-grid">
                     {[
-                        { title: "Design with the User", img: "../../src/assets/images/design-user.png", link: "/ethics-of-innovation/user", 
+                        { title: "Design with the User", img: "/assets/images/design-user.png", link: "/ethics-of-innovation/user", 
                         text: "User-centered design begins with understanding the people you are designing for by utilizing conversation, observation, and co-creation." },
-                        { title: "Understanding the Existing Ecosystems", img: "src/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/ecosystem", 
+                        { title: "Understanding the Existing Ecosystems", img: "/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/ecosystem", 
                         text: "Ecosystems are the sum of many factors such as culture, economy, political environment and infrastructure to name a few." },
-                        { title: "Design for Scale", img: "src/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/scale", 
+                        { title: "Design for Scale", img: "/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/scale", 
                         text: "Achieving scale requires thinking beyond a few pilot communities by determining affordability and usability when rationalizing a whole region or country and formulating decisions that enable widespread adoption in the future." },
-                        { title: "Build for Sustainability", img: "src/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/sustainability", 
+                        { title: "Build for Sustainability", img: "/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/sustainability", 
                         text: "Building for sustainability allows the project planners to maximize long term impact by maintaining user and stakeholder support and ensuring that the user and stakeholder contributions are still developed even in the case of a loss of funding or other interruptions. " },
-                        { title: "Be Data Driven", img: "src/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/data", 
+                        { title: "Be Data Driven", img: "/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/data", 
                         text: "It is essential for project managers to utilize quality data in making informed decisions that will impact their final product." },
-                        { title: "Use Open Standards", img: "src/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/standards", 
+                        { title: "Use Open Standards", img: "/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/standards", 
                         text: "Using open-source material can prevent unnecessary work and resource usage while still providing meaningful results." },
-                        { title: "Reuse and Improve", img: "src/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/reuse", 
+                        { title: "Reuse and Improve", img: "/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/reuse", 
                         text: "" },
-                        { title: "Address Privacy & Security", img: "src/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/privacy", 
+                        { title: "Address Privacy & Security", img: "/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/privacy", 
                         text: "Considering the privacy and security of users is ensuring that users are safe from privacy violations during project implementations." },
-                        { title: "Be Collaborative", img: "src/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/collaboration", 
+                        { title: "Be Collaborative", img: "/assets/images/gdd-hero.jpg", link: "/ethics-of-innovation/collaboration", 
                         text: "Being collaborative requires project managers to communicate and share with peer organizations, stakeholders, and related government agencies." },
                     ].map((item, index) => (
                         <a key={index} href={item.link} className="principle-card">

@@ -10,9 +10,9 @@ type Tool = {
 
 const tools: Tool[] = [
   { title: "Ethics Canvas", subtitle: "AI-Enabled Business Innovation Tool", href: "/ethics-canvas" },
-  { title: "Ethics of Innovation", subtitle: "Interactive Global Dev Explorer", href: "/worldwise" },
-  { title: "Worthwhile Development", subtitle: "Guides, cases, and frameworks", href: "/development-ethics" },
-  { title: "Human Centered Design", subtitle: "Real projects, real impact", href: "/case-studies" },
+  { title: "Ethics of Innovation", subtitle: "Interactive Global Dev Explorer", href: "/ethics-of-innovation" },
+  { title: "Worthwhile Development", subtitle: "Guides, cases, and frameworks", href: "/worthwhile-development" },
+  { title: "Human Centered Design", subtitle: "Real projects, real impact", href: "/human-centered-design" },
 ];
 
 export default function ExploreTools() {

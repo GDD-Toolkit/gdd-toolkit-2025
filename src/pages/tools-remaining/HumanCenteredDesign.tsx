@@ -157,9 +157,9 @@ export default function HumanCenteredDesign() {
 
       {/* Content Drop Box */}
       {selectedCapsule && (
-      <div className="mt-10 w-full flex justify-center">
-        <div className="w-full max-w-2xl bg-white shadow-lg border border-gray-200 rounded-xl p-8">
-        {selectedCapsule === "emphasize" && (
+      <div className="bottom-Info-Holder">
+        <div className="bottom-Content-Box">
+        {selectedCapsule== "emphasize" && (
         <div>
           <p>
             In order to properly implement Human-Centered Design principles, it is
@@ -167,35 +167,35 @@ export default function HumanCenteredDesign() {
             background and their needs.
           </p>
           <img src={HCDPersona} alt="HCD Persona" />
-          <p className="mt-8">
+          <p className="paragraph-Margin">
             In order for us to better properly empathize with end users, we created a
             persona and analyzed how we can meet their needs.
           </p>
         </div>
         )}
 
-        {selectedCapsule === "define" && (
+        {selectedCapsule== "define" && (
         <div>
           <p>
             Analyze data gathered from empathizing with the population and identify an underlying issue.
           </p>
           <img src={HCDSurvey} alt="HCD Survey" />
-          <p className="mt-8">
+          <p className="paragraph-Margin">
             To understand how he could improve his class, a professor sent out a survey to his students. 
             Can you determine a trend in the responses and define a problem the students are experiencing?
           </p>
-          <p className = "mt-8">
+          <p className= "paragraph-Margin">
             Though there are multiple problems, the main one expressed was the pace of the professor.
           </p>
         </div>
         )}
 
-        {selectedCapsule === "ideate" && (
+        {selectedCapsule== "ideate" && (
         <div>
           <p>
             Develop solutions that meet specified needs.
           </p>
-          <p className="mt-8">
+          <p className="paragraph-Margin">
             In order for us to better properly empathize with end users, we created a
             persona and analyzed how we can meet their needs.
           </p>
@@ -208,7 +208,7 @@ export default function HumanCenteredDesign() {
         </div>
         )}
 
-        {selectedCapsule === "prototype" && (
+        {selectedCapsule== "prototype" && (
         <div>
           <p>
             Create versions of your ideas so they can be evaluated before finalizing a solution.
@@ -221,7 +221,7 @@ export default function HumanCenteredDesign() {
         </div>
         )}
 
-        {selectedCapsule === "test" && (
+        {selectedCapsule== "test" && (
         <div>
           <p>
             Present the end-user with a high-fidelity prototype. Listen to user feedback and reiterate the process if needed.

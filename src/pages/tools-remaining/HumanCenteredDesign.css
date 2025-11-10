@@ -169,3 +169,27 @@
 .topTwo-Capsules-Styling:hover {
   transform: scale(1.1);        
 }
+
+.bottom-Info-Holder {
+  margin-top: 2.5rem;   
+  width: 100%;          
+  display: flex;       
+  justify-content: center; 
+}
+
+.bottom-Content-Box {
+  width: 100%;                    
+  max-width: 42rem;                
+  background-color: white;         
+  
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),
+              0 4px 6px -4px rgba(0,0,0,0.1); /* shadow-lg */
+  
+  border: 1px solid #e5e7eb;       
+  border-radius: 0.75rem;          
+  padding: 2rem;                   
+}
+
+.paragraph-Margin {
+  margin-top: 2rem; 
+}

@@ -10,11 +10,8 @@ const bannerVariants = {
 };
 
 export default function HumanCenteredDesign() {
-  const [isOpenEmphasize, setIsOpenEmphasize] = useState(false);
-  const [isOpenDefine, setIsOpenDefine] = useState(false);
-  const [isOpenIdeate, setIsOpenIdeate] = useState(false);
-  const [isOpenPrototype, setIsOpenPrototype] = useState(false);
-  const [isOpenTest, setIsOpenTest] = useState(false);
+ 
+  const [selectedCapsule, setSelectedCapsule] = useState<string | null>(null);
 
   return (
     <div className="entire-Container">
@@ -94,137 +91,150 @@ export default function HumanCenteredDesign() {
         </div>
       </div>
 
-      {/* Top 3 Capsules and Drop Down */}
+      {/* Top 5 Capsules and Drop Down */}
       <div className="top-Capsules-Container">
 
         {/* Emphasize Capsule */}
       <section className="top-Capsule">
         <div
-          onClick={() => setIsOpenEmphasize(!isOpenEmphasize)}
+          onClick={() => setSelectedCapsule("emphasize")}
           className="top-Capsules-Styling"
         >
           <h2 className="capsule-Header">
             Emphasize
           </h2>
         </div>
-        {isOpenEmphasize && (
-          <div className="capsule-Dropdown">
-            <p>
-              In order to properly implement Human-Centered Design principles, it is essential to understand and empathize with end users by knowing their background and their needs.
-            </p>
-            <img src={HCDPersona} alt="HCD Persona" />
-            <p className = "mt-8">
-              In order for us to better properly empathize with end users, we created a persona and analyzed how we can meet their needs. 
-            </p>
-          </div>
-        )}
-      </section>
+        </section>
 
       {/* Define Capsule*/}
       <section className="top-Capsule">
         <div
-          onClick={() => setIsOpenDefine(!isOpenDefine)}
-          className="top-Capsules-Styling"
+          onClick={() => setSelectedCapsule("define")}
+          className="topTwo-Capsules-Styling"
         >
           <h2 className="capsule-Header">
             Define
           </h2>
         </div>
-        {isOpenDefine && (
-          <div className="capsule-Dropdown">
-            <p>
-              Analyze data gathered from empathizing with the population and identify an underlying issue.
-            </p>
-            <img src={HCDSurvey} alt="HCD Survey" />
-            <p>
-              To understand how he could improve his class, a professor sent out a survey to his students. Can you determine a trend in the responses and define a problem the students are experiencing?
-            </p>
-            <p className = "mt-8">
-              Though there are multiple problems, the main one expressed was the pace of the professor.
-            </p>
-          </div>
-        )}
       </section>
 
       {/* Ideate Capsule*/}
       <section className="top-Capsule">
         <div
-          onClick={() => setIsOpenIdeate(!isOpenIdeate)}
+          onClick={() => setSelectedCapsule("ideate")}
           className="top-Capsules-Styling"
         >
           <h2 className="capsule-Header">
             Ideate
           </h2>
         </div>
-
-        {isOpenIdeate && (
-          <div className="capsule-Dropdown">
-            <p>
-              Develop solutions that meet specified needs.
-            </p>
-            <ul className="bullet-Point-List">
-              <li> Brainstorm various ideas and decide on the best route.</li>
-              <li> Begin stages of designs, development, and prototypes.</li>
-              <li> Test out various ideas and prototypes.</li>
-              <li> Utulize feedback in order to improve ideas and prototypes</li>
-            </ul>
-          </div>
-        )}
       </section>
-    </div>
 
-    {/*Lower 2 Capsules and Drop Down */}
-    <div className="bottom-Capsules-Containers">
-
-      {/* Prototype Capsule*/}
-      <section className="bottom-Capsules">
+      {/* Prototype Capsule */}
+      <section className="top-Capsule">
         <div
-          onClick={() => setIsOpenPrototype(!isOpenPrototype)}
-          className="bottom-Capsules-Styling"
+          onClick={() => setSelectedCapsule("prototype")}
+          className="topTwo-Capsules-Styling"
         >
           <h2 className="capsule-Header">
             Prototype
           </h2>
         </div>
-
-        {isOpenPrototype && (
-          <div className="capsule-Dropdown">
-            <p>
-              Create versions of your ideas so they can be evaluated before finalizing a solution.
-            </p>
-            <ul className="bullet-Point-List">
-              <li> Low fidelity prototypes (such as sketches and storyboards).</li>
-              <li> Role-player simulations.</li>
-              <li> Physical prototypes (such as clay, cardboard, 3D printing).</li>
-            </ul>
-          </div>
-        )}
       </section>
 
-      {/* Test Capsule*/}
-      <section className="bottom-Capsules">
+      {/* Test Capsule */}
+      <section className="top-Capsule">
         <div
-          onClick={() => setIsOpenTest(!isOpenTest)}
-          className="bottom-Capsules-Styling"
+          onClick={() => setSelectedCapsule("test")}
+          className="top-Capsules-Styling"
         >
           <h2 className="capsule-Header">
             Test
           </h2>
         </div>
-
-        {isOpenTest && (
-          <div className="capsule-Dropdown">
-            <p>
-              Present the end-user with a high-fidelity prototype. Listen to user feedback and reiterate the process if needed.
-            </p>
-            <ul className="bullet-Point-List">
-              <li> Conduct focus groups with end-users.</li>
-              <li> Send out a survey.</li>
-            </ul>
-          </div>
-        )}
       </section>
+      </div>
+
+      {/* Content Drop Box */}
+      {selectedCapsule && (
+      <div className="bottom-Info-Holder">
+        <div className="bottom-Content-Box">
+        {selectedCapsule== "emphasize" && (
+        <div>
+          <p>
+            In order to properly implement Human-Centered Design principles, it is
+            essential to understand and empathize with end users by knowing their
+            background and their needs.
+          </p>
+          <img src={HCDPersona} alt="HCD Persona" />
+          <p className="paragraph-Margin">
+            In order for us to better properly empathize with end users, we created a
+            persona and analyzed how we can meet their needs.
+          </p>
+        </div>
+        )}
+
+        {selectedCapsule== "define" && (
+        <div>
+          <p>
+            Analyze data gathered from empathizing with the population and identify an underlying issue.
+          </p>
+          <img src={HCDSurvey} alt="HCD Survey" />
+          <p className="paragraph-Margin">
+            To understand how he could improve his class, a professor sent out a survey to his students. 
+            Can you determine a trend in the responses and define a problem the students are experiencing?
+          </p>
+          <p className= "paragraph-Margin">
+            Though there are multiple problems, the main one expressed was the pace of the professor.
+          </p>
+        </div>
+        )}
+
+        {selectedCapsule== "ideate" && (
+        <div>
+          <p>
+            Develop solutions that meet specified needs.
+          </p>
+          <p className="paragraph-Margin">
+            In order for us to better properly empathize with end users, we created a
+            persona and analyzed how we can meet their needs.
+          </p>
+          <ul className="bullet-Point-List">
+              <li> Brainstorm various ideas and decide on the best route.</li>
+              <li> Begin stages of designs, development, and prototypes.</li>
+              <li> Test out various ideas and prototypes.</li>
+              <li> Utulize feedback in order to improve ideas and prototypes</li>
+            </ul>
+        </div>
+        )}
+
+        {selectedCapsule== "prototype" && (
+        <div>
+          <p>
+            Create versions of your ideas so they can be evaluated before finalizing a solution.
+          </p>
+          <ul className="bullet-Point-List">
+            <li> Low fidelity prototypes (such as sketches and storyboards).</li>
+            <li> Role-player simulations.</li>
+            <li> Physical prototypes (such as clay, cardboard, 3D printing).</li>
+          </ul>
+        </div>
+        )}
+
+        {selectedCapsule== "test" && (
+        <div>
+          <p>
+            Present the end-user with a high-fidelity prototype. Listen to user feedback and reiterate the process if needed.
+          </p>
+          <ul className="bullet-Point-List">
+            <li> Conduct focus groups with end-users.</li>
+            <li> Send out a survey.</li>
+          </ul>
+        </div>
+        )}
+        </div>
+      </div>
+      )}
     </div>
-    </div>
-  );
+ );
 }

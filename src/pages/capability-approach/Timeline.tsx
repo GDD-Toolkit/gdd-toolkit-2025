@@ -13,34 +13,36 @@ const Timeline: React.FC = () => {
       year: "1948",
       title: "International Manuscript",
       description:
-        "The UN publishes the Universal Declaration of Human Rights — a global standard for equality and dignity.",
+        "The UN publishes the Universal Declaration of Human Rights — a global standard for equality and dignity. This document was called the 'Universal Declaration of Human Rights' and merely outlined standards for human rights from an international perspective. ",
     },
     {
       year: "1997",
       title: "Reform",
       description:
-        "The UN redefines its development model, shifting from basic needs to a Human Rights–Based Approach (HRBA).",
+        "The UN redefines its development model, shifting from basic needs to a Human Rights–Based Approach (HRBA). This effectively switched the focus of global development from the beneficiaries to the general human population.",
     },
     {
       year: "2003",
       title: "Adopted Globally",
       description:
-        "The HRBA becomes the official foundation of global development cooperation, focusing on empowerment and inclusion.",
+        "The UN Common Understanding on a Human-Rights-Based Approach (HRBA) to Development Cooperation was adopted. In this document, the UN sets forth elements such as recognition of human rights that ensure proper consideration of human rights when developing a nation.",
     },
+    {
+      year: "2004",
+      title: "HDCA",
+      description:
+        "The Human Development and Capability Association (HDCA) was established by Nobel laureate Amartya Sen. It was formally launched at a conference in Pavia, Italy, to promote research and discussion on human development and the capability approach.",
+    }
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-24">
-      <h2 className="text-4xl font-extrabold text-center mb-20 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-        Timeline
-      </h2>
-
+    <section className="max-w-7xl mt-65 mb-20 mx-auto px-4 py-24">
       <div className="relative flex justify-between items-center">
         <div className="absolute top-1/2 inset-x-[-40%] h-1 bg-gradient-to-r from-transparent via-green-500 via-blue-500 via-green-500 to-transparent -translate-y-1/2 rounded-full" />
           {events.map((event, index) => (
             <motion.div
               key={index}
-              className="relative flex flex-col items-center w-1/3"
+              className="relative flex flex-col items-center w-1/15"
               initial={{ opacity: 0, y: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}

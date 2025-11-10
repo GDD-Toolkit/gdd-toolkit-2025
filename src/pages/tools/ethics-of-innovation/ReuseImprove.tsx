@@ -13,60 +13,48 @@ const ReuseImprove: React.FC = () => {
     return (
         <div className="page-container">
             <header className="mission-banner">
-                <motion.h1
-                    className="mission-title"
-                    initial="hidden"
-                    animate="visible"
-                    variants={bannerVariants}
-                >
-                    Design with the User
-                </motion.h1>
+                <div className="header-flex">
+                    <button
+                        className="back-button"
+                        onClick={() => window.history.back()}
+                    >
+                        ← Back
+                    </button>
+                    <motion.h1
+                        className="mission-title"
+                        initial="hidden"
+                        animate="visible"
+                        variants={bannerVariants}
+                    >
+                        Reuse and Improve
+                    </motion.h1>
+                </div>
             </header>
 
-            {/* --- Section 1: Simulation --- */}
+            {/* --- Section 1: Image + Summary --- */}
             <section className="content-section">
-                <div className="content-card">
-                    <h2 ref={simulationRef} className="simulation-title">
-                        Ethics of Innovation Simulation
-                    </h2>
-                    <motion.p
-                        className="simulation-text"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, ease: easeOut }}
-                    >
-                        By utilizing the 9 principles of digital design: contrast, movement, repetition, proportion, balance, emphasis, 
-                        simplicity, functionality, accessibility, and incorporating ethics of innovation, you can effectively lead a 
-                        project as a program manager in this simulation. In this role, you’ll have to decide how best to design you 
-                        project while keeping ethics of innovation in mind! Try it out for yourself. 
-                        <br /><br />
-                        <a href="https://umdsurvey.umd.edu/jfe/form/SV_6tAE6MSIm6aExU2">
-                            Click Here For Simulation!
-                        </a>
-                    </motion.p>
-                </div>
-            </section>
+                <div className="content-card principles-summary-flex">
+                    <h2 ref={simulationRef} className="principles-summary-title">Summary</h2>
 
-            {/* --- Section 2: 9 Principles --- */}
-            <section className="content-section">
-                <div className="content-card">
-                    <h2 className="simulation-title">
-                        9 Principles of Digital Design
-                    </h2>
-                    <motion.p
-                        className="simulation-text"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, ease: easeOut }}
-                    >
-                        <b> Click on the images </b> below to learn about each of the 9 digital design principles and how to incorporate 
-                        them into your project. Each page also comes with a checklist that you can use after you project to ensure that 
-                        you met the necessary criteria to have incorporated ethics of innovation into your project!
-                    </motion.p>
+                    <div className="principles-summary-content">
+                    <div className="principles-summary-image-wrapper">
+                        <img
+                        src="INSERT HERE"
+                        alt="Design Principles Summary"
+                        className="principles-summary-image"
+                        />
+                    </div>
+
+                    <div className="principles-summary-text-wrapper">
+                        <p className="principles-summary-text">
+                         Under Construction...
+                        </p>
+                    </div>
+                    </div>
                 </div>
             </section>
         </div>
-    );
-};
+    )
+}
 
 export default ReuseImprove;

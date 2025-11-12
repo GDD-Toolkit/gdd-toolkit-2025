@@ -32,9 +32,8 @@ const MENUS: Menu[] = [
   {
     label: 'Case Studies',
     items: [
-      { label: 'Health', href: '/case-studies/health' },
-      { label: 'Energy', href: '/case-studies/energy' },
-      { label: 'Water', href: '/case-studies/water' }
+      { label: 'Projects', href: '/case-studies/projects' },
+      { label: 'Policies', href: '/case-studies/policies' }
     ]
   },
   {

@@ -24,14 +24,17 @@ const SDG_LABELS: Record<number, string> = {
 };
 
 // Type definitions
+export type CaseStudyType = "Worthwhile Development" | "Maldevelopment";
+
 export type CaseStudy = {
     name: string;
     image: string;
     region: Region[];
     values: Value[];
-    sdgs: number[];
+    sdgs: SDG[];
     summary: string;
     relation_sdgs_values: string;
+    type: CaseStudyType;
 };
 
 export type Region =
@@ -82,8 +85,28 @@ const caseStudiesData: CaseStudy[] = [
         sdgs: [1, 3, 8],
         summary: "There has been rapid growth with poverty reduction within a few countries in Asia, like Vietnam and China. However, the rapid growth on its own is not sufficient enough to sustain poverty reduction, and that rapid growth can lead to social instability and harm the cohesion of a community. The growth also does not account for an equal distribution of growth within a country and that the individuals in poorer situations will all benefit from the development. This study shows how significant structural and demographic developments are to reducing poverty in a wide range of areas, and maintaining the reduction.    ",
         relation_sdgs_values: "SDGs 1, 3, and 8 relate to this case study because they deal with limiting poverty, increasing the well-being of all individuals, and economic growth, which are the goals of what is mentioned in this review. The values of worthwhile development that relate to this study are well-being, as also expressed in the SDGs, and human rights, as this study focuses on finding ways to create strong growth and development in reducing poverty amongst an equal distribution of people.    ",
+        type: "Worthwhile Development"
     },
-
+    {
+        name: "Achieving the Food Security Strategy by Quantifying Food Loss and Waste. A Case Study of the Chinese Economy ",
+        image: "/assets/images/chinafoodsecurity.jpg",
+        region: ["East Asia & Pacific"],
+        values: ["Well-Being"],
+        sdgs: [2],
+        summary: "Around the world, roughly one-third of food is not consumed and is wasted. In other words, it is about 1.3 billion tonnes per year. In China, there has been some progress in reducing undernourishment, but the amount of food loss and waste (FLW) is alarming and increasing dramatically. The U.S.-China trade war and the aftermath of the COVID-19 pandemic are having economic effects around the world. Thus, it might affect China's food security, as it relies on its imports, which is why the research study is essential. No studies have analyzed the impact of FLW on contributing to the SDGs in China (Durán-Sandova et al., 2021).         ",
+        relation_sdgs_values: "Overall, the relation to SDG: Zero Hunger and the value of worthwhile of well-being is demonstrated as the research aims to find what is causing an increase in FLW and to find the amount of FLW in China. The research concluded that to increase the availability and high quality of food, there must be control of FLW. To reduce the cost of food and improve access to food for vulnerable people, there must be sustainable food systems. Likewise, sustainable food systems can also increase the stability of the food supply. Lastly, it was revealed that FLW has negative effects on the environment through the waste of water and emissions that cause climate change and damage to biodiversity. ",
+        type: "Worthwhile Development"
+    },
+    {
+        name: "Managing Sex Education Controversy Deep in the Heart of Texas: A Case Study of the North East Independent School District (NEISD)",
+        image: "/assets/images/texassexed.jpg",
+        region: ["North America"],
+        values: ["Well-Being", "Cultural Freedom"],
+        sdgs: [4],
+        summary: "The USA has one of the highest teen pregnancy and birth rates among other high-income countries. Young people account for approximately 50% of all new STIs reported each year, along with 20% of all new HIV diagnoses. Black and Hispanic adolescents have even worse outcomes across the country than their white peers related to sexual and reproductive health",
+        relation_sdgs_values: "Comprehensive Sexuality Education provides young people with accurate, age-appropriate information about sexuality and their sexual and reproductive health .Preaching abstinence-only rhetoric does not give young people the life-skills needed to navigate their sexuality, relationships, and reproductive health.It has consistently been shown that abstinence-only education is positively correlated with teen pregnancy, and HIV and STIs in adolescents",
+        type: "Maldevelopment"
+    },
     // Add more case studies here
 ];
 
@@ -101,14 +124,15 @@ const CaseStudies: React.FC = () => {
         sdgs: SDG[];
         values: Value[];
         regions: Region[];
-    }>({ sdgs: [], values: [], regions: [] });
+        type: CaseStudyType[];
+    }>({ sdgs: [], values: [], regions: [], type: [] });
 
-    const toggleFilter = (type: "sdgs" | "values" | "regions", value: SDG | Value | Region) => {
+    const toggleFilter = (type: "sdgs" | "values" | "regions" | "type", value: SDG | Value | Region | CaseStudyType) => {
         setActiveFilters((prev) => ({
           ...prev,
-          [type]: (prev[type] as (SDG | Value | Region)[]).includes(value)
-            ? (prev[type] as (SDG | Value | Region)[]).filter((v) => v !== value)
-            : [...(prev[type] as (SDG | Value | Region)[]), value],
+          [type]: (prev[type] as (SDG | Value | Region | CaseStudyType)[]).includes(value)
+            ? (prev[type] as (SDG | Value | Region | CaseStudyType)[]).filter((v) => v !== value)
+            : [...(prev[type] as (SDG | Value | Region | CaseStudyType)[]), value],
         }));
     };
       
@@ -118,7 +142,8 @@ const CaseStudies: React.FC = () => {
         (cs) =>
             (activeFilters.sdgs.length === 0 || cs.sdgs.some((s) => activeFilters.sdgs.includes(s as SDG))) &&
             (activeFilters.values.length === 0 || cs.values.some((v) => activeFilters.values.includes(v))) &&
-            (activeFilters.regions.length === 0 || cs.region.some((r) => activeFilters.regions.includes(r)))
+            (activeFilters.regions.length === 0 || cs.region.some((r) => activeFilters.regions.includes(r))) &&
+            (activeFilters.type.length === 0 || activeFilters.type.includes(cs.type))
     );
 
     return (
@@ -171,6 +196,19 @@ const CaseStudies: React.FC = () => {
 
                     {/* --- Filter Buttons --- */}
                     <div className="filters">
+                        {/* Type */}
+                        <div className="filter-group">
+                            <span className="filter-label">Type:</span>
+                            {["Worthwhile Development", "Maldevelopment"].map((t) => (
+                                <button
+                                    key={t}
+                                    className={`filter-btn ${activeFilters.type.includes(t as CaseStudyType) ? "active" : ""}`}
+                                    onClick={() => toggleFilter("type", t as CaseStudyType)}
+                                >
+                                    {t}
+                                </button>
+                            ))}
+                        </div>
                         {/* SDGs */}
                         <div className="filter-group">
                             <span className="filter-label">SDGs:</span>
@@ -250,6 +288,7 @@ const CaseStudies: React.FC = () => {
                                 <div className="details-top">
                                     <img src={selectedCaseStudy.image} alt={selectedCaseStudy.name} className="details-img" />
                                     <div className="details-meta">
+                                        <p><strong>Type:</strong> {selectedCaseStudy.type}</p>
                                         <p>
                                             <strong>SDGs:</strong>{" "}
                                             {selectedCaseStudy.sdgs

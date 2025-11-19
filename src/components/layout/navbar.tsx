@@ -15,9 +15,9 @@ const MENUS: Menu[] = [
   {
     label: 'Development Ethics',
     items: [
-      { label: 'What is Development Ethics', href: '/development-ethics' },
+      { label: 'Development Ethics', href: '/development-ethics' },
       { label: 'Worthwhile Development', href: '/worthwhile-development' },
-      { label: 'Capability Approach', href: '/capability-approach' }
+      { label: 'The Capability Approach', href: '/capability-approach' }
     ]
   },
   {
@@ -30,17 +30,12 @@ const MENUS: Menu[] = [
     ]
   },
   {
-    label: 'Case Studies',
-    items: [
-      { label: 'Projects', href: '/case-studies/projects' },
-      { label: 'Policies', href: '/case-studies/policies' }
-    ]
+    label: 'Case Studies', href: '/case-studies',
   },
   {
     label: 'Resources',
     items: [
-      { label: 'Readings', href: '/resources/readings' },
-      { label: 'Tools', href: '/resources/tools' }
+      { label: 'Funding Sources', href: '/funding-sources' }
     ]
   },
   { label: 'Contacts', href: '/contacts' }

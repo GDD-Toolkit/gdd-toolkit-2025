@@ -195,7 +195,7 @@ export default function Worthwhile() {
           animate="visible"
           variants={bannerVariants}
         >
-          What Is Worthwhile Development?
+          Worthwhile Development
         </motion.h1>
         <motion.p
           className="mx-auto mt-4 max-w-3xl text-base md:text-lg text-white/90 leading-relaxed"

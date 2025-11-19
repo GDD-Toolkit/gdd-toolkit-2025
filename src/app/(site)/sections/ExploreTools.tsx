@@ -45,10 +45,10 @@ export default function ExploreTools() {
               </p>
             </FadeIn>
             <StaggerChildren className="mt-6 space-y-3 text-gray-800 md:text-left text-left">
-              <SlideUp><li>• <strong>Ethics of Innovation</strong> — weigh benefits, risks, and trade-offs before you build.</li></SlideUp>
-              <SlideUp><li>• <strong>Human-Centered Design</strong> — map stakeholders, needs, and harms to avoid.</li></SlideUp>
-              <SlideUp><li>• <strong>Project Planning</strong> — milestones, roles, and accountability checklists.</li></SlideUp>
-              <SlideUp><li>• <strong>Project Evaluation</strong> — measurable indicators for outcomes and unintended effects.</li></SlideUp>
+              <SlideUp><li><strong>Ethics of Innovation</strong> — weigh benefits, risks, and trade-offs before you build.</li></SlideUp>
+              <SlideUp><li><strong>Human-Centered Design</strong> — map stakeholders, needs, and harms to avoid.</li></SlideUp>
+              <SlideUp><li><strong>Project Planning</strong> — milestones, roles, and accountability checklists.</li></SlideUp>
+              <SlideUp><li><strong>Project Evaluation</strong> — measurable indicators for outcomes and unintended effects.</li></SlideUp>
             </StaggerChildren>
             <FadeIn>
               <p className="mt-4 text-sm text-gray-500">All tools include templates and step-by-step guides.</p>

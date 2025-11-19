@@ -15,7 +15,7 @@ const Collaborative = lazy(() => import("@/pages/tools/ethics-of-innovation/Coll
 const HumanCenteredDesign = lazy(() => import("@/pages/tools-remaining/HumanCenteredDesign"));
 const ProjectPlanningHomepage = lazy(() => import("@/pages/project-planning/homepage"));
 const ProjectEvaluation = lazy(() => import("@/pages/tools/ProjectEvaluation"));
-const Polices = lazy(() => import ("@/pages/case-studies/Policies"));
+const CaseStudies = lazy(() => import ("@/pages/case-studies/CaseStudies"));
 
 const router = createBrowserRouter([
   {
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       { path: "human-centered-design", element: <HumanCenteredDesign />},
       { path: "project-planning", element: <ProjectPlanningHomepage />},
       { path: "project-evaluation", element: <ProjectEvaluation />},
-      { path: "case-studies/policies", element: <Polices />},
+      { path: "case-studies", element: <CaseStudies />},
     ],
   },
 ]);

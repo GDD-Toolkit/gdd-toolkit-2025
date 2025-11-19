@@ -36,6 +36,11 @@ export type SDG =
   | 16
   | 17;
 
+export type Author = {
+  name?: string,
+  contact: string, //email address or number
+}
+
 const Indicators = {
   "Well-Being": [
     "Readily available access to essential goods including water, food, sanitation",
@@ -44,21 +49,21 @@ const Indicators = {
     "Self-Reported happiness",
     "Access to individual agency and autonomy",
   ],
-  "Equality": [
+  Equality: [
     "Equal access to education",
     "Equal access to healthcare",
     "Equal access to housing",
     "Equal access to political participation",
     "Equal access to social participation",
   ],
-  "Empowerment": [
+  Empowerment: [
     "Political representation",
     "Transparent information flow",
     "Freedom to make decisions without coercion",
     "Self-reported autonomy",
     "Government frameworks for protection of rights",
   ],
-  "Sustainability": [
+  Sustainability: [
     "Presence of CO2 emissions thresholds",
     "Efforts to preserve biodiversity and ecosystems",
     "Sustainable food production",
@@ -93,15 +98,15 @@ export type IndicatorsByValue = typeof Indicators;
 export type ProjectEvaluation = {
   [K in keyof IndicatorsByValue as Lowercase<K>]: {
     summary: string;
-    indicators_checked: IndicatorsByValue[K];
-    score: "A" | "B" | "C" | "F";
+    indicators_checked?: IndicatorsByValue[K];
+    score?: "A" | "B" | "C" | "F";
   };
 };
 
 export type Project = {
   id: string;
   name: string;
-  image: string;
+  image?: string;
   regions: Region[];
   values: Value[];
   sdgs: SDG[];
@@ -115,40 +120,32 @@ export type Project = {
 export type Policy = {
   id: string;
   name: string;
-  pro_or_mal: "Public Policy" | "Maldevelopment";
-  image: string;
+  image?: string;
   region: Region;
   values: Value[];
   sdgs: SDG[];
   issue: string;
   introduction: string;
-  context: string;
   goal: string;
   methods: string;
-  solutions: string;
+  solutions?: string;
   findings_implications: string;
   relation_sdgs_values: string;
   references: string[];
   evaluation: ProjectEvaluation;
+  authors?: Author[];
 };
 
-export type CaseStudy = {
-  type: "Project" | "Policy";
-  case_study: Project | Policy;
-};
-
-// Project Planning
-export type PMTool = {
-    name: string,
-    category: string[],
-    summary: string,
-    image: string,
-    steps: {step: string, description: string}[],
-    slideshow: string,
-    learning_objectives: string[],
-    characteristics: string[],
-    benefits: string[],
-    drawbacks: string[],
-    example: {images: string[], description: string},
-    how_to_use: string
+export type Maldevelopment = {
+  id: string;
+  name: string;
+  image?: string;
+  region: Region;
+  values: Value[];
+  sdgs: SDG[];
+  summary: string,
+  relation_sdgs_values: string;
+  references: string[];
+  authors?: Author[];
+  evaluation: ProjectEvaluation;
 }

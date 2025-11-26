@@ -233,6 +233,7 @@ const DesignUser: React.FC = () => {
                     </div>
                 </div>
             </section>
+            <br></br>
         </div>
     );
 };

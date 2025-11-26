@@ -235,6 +235,7 @@ export default function HumanCenteredDesign() {
         </div>
       </div>
       )}
+      <br></br>
     </div>
  );
 }

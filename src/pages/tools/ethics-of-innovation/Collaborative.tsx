@@ -124,6 +124,7 @@ const Collaborative: React.FC = () => {
                     </motion.ul>
                 </div>
             </section>
+            <br></br>
         </div>
     )
 }

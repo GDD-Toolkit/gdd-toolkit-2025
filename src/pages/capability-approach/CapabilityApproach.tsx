@@ -113,6 +113,9 @@ export default function CapabilityApproach() {
         <p className = "w-full">
             <Timeline/> 
         </p>
+        <br></br>
+        <br></br>
+        <br></br>
       </section>
     </div>
     </div>

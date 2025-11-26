@@ -89,6 +89,17 @@ export default function HomePage() {
 
         {/* Optional spacing */}
         <div className="py-8" />
+
+        {/* IMAGE WITH TOP GRADIENT FADE */}
+        <motion.div className="relative" variants={itemVariants}>
+            {/* Gradient overlay (top fade) */}
+            <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
+
+            <motion.img
+            src="/assets/images/footer_image.png"
+            className="w-full"
+            />
+        </motion.div>
       </motion.div>
     </>
   )

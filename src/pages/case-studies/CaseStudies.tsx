@@ -120,6 +120,7 @@ const CaseStudies: React.FC = () => {
 
     // State for filters and selected case study
     const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudy | null>(null);
+    const [searchQuery, setSearchQuery] = useState("");
     const [activeFilters, setActiveFilters] = useState<{
         sdgs: SDG[];
         values: Value[];
@@ -138,13 +139,18 @@ const CaseStudies: React.FC = () => {
       
 
     // Apply filters to case studies
-    const filteredCaseStudies = caseStudiesData.filter(
-        (cs) =>
-            (activeFilters.sdgs.length === 0 || cs.sdgs.some((s) => activeFilters.sdgs.includes(s as SDG))) &&
+    const filteredCaseStudies = caseStudiesData.filter((cs) => {
+        const matchesSearch =
+            cs.name.toLowerCase().includes(searchQuery.toLowerCase());
+    
+        return (
+            matchesSearch &&
+            (activeFilters.sdgs.length === 0 || cs.sdgs.some((s) => activeFilters.sdgs.includes(s))) &&
             (activeFilters.values.length === 0 || cs.values.some((v) => activeFilters.values.includes(v))) &&
             (activeFilters.regions.length === 0 || cs.region.some((r) => activeFilters.regions.includes(r))) &&
             (activeFilters.type.length === 0 || activeFilters.type.includes(cs.type))
-    );
+        );
+    });
 
     return (
         <div className="page-container">
@@ -191,8 +197,20 @@ const CaseStudies: React.FC = () => {
                 <div className="content-card">
                     <h2 className="simulation-title">Explore Case Studies</h2>
                     <p className="simulation-text">
-                        Explore case studies based on SDGs, Values of Worthwhile Development, Region, and whether it is Worthwhile Development or Maldevelopment by clicking on the buttons below to filter the gallery of case studies.
+                        Explore case studies based on Name, SDGs, Values of Worthwhile Development, Region, and whether it is Worthwhile Development or Maldevelopment by using the search bar or clicking on the buttons below to filter the gallery of case studies.
                     </p>
+
+                    {/* --- Search Bar With Label --- */}
+                    <div className="search-wrapper">
+                        <label className="search-label">Name:</label>
+                        <input
+                            type="text"
+                            placeholder="Search by name..."
+                            className="search-input"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                    </div>
 
                     {/* --- Filter Buttons --- */}
                     <div className="filters">

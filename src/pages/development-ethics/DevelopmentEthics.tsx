@@ -298,6 +298,7 @@ const DevelopmentEthics: React.FC = () => {
                     </ol>
                 </div>
             </section>
+            <br></br>
         </div>
     );
 };

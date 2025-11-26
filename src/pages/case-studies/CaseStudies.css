@@ -251,3 +251,42 @@
 .details-meta strong {
     color: #047857; /* highlight like headings/filters */
 }
+
+/* === Search Bar Styles === */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.search-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #047857;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid #047857;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    color: #047857;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.search-input::placeholder {
+    color: #6b7280; /* gray placeholder */
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(4, 120, 87, 0.3);
+}
+
+.search-input:hover {
+    background-color: #f0fdf4; /* subtle green tint similar to button hover */
+}

@@ -36,7 +36,7 @@ const DevelopmentEthics: React.FC = () => {
             <section className="content-section">
                 <div className="content-card">
                     <h2 ref={simulationRef} className="simulation-title">
-                        Development Ethics Foundations
+                        About the Development Ethics Toolkit
                     </h2>
                     <motion.p
                         className="simulation-text"
@@ -44,7 +44,16 @@ const DevelopmentEthics: React.FC = () => {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, ease: easeOut }}
                     >
-                        Developmental ethics involves how human rights, basic needs, and social justice are met throughout any form of the development process. Being ethical, honest, and fair, is one of the basic human needs. It is important to make sure that when development is taking place throughout the globe, no matter the economic condition, culture, or religion of the country, ethics is still a major focus. The concept of “development” was originally and is often understood in the context of economic growth or improvement. Historically, Development Planners focused on raising gross domestic product (GDP) and other measures of financial success. (Goulet, Development Ethics a New Discipline, 1997, p. 1) However, beginning with the work of Denis Goulet and Louis-Joseph Lebert in the 1970s, scholars have expanded upon the practice of development through the field of “development ethics.” (Devulin, 2012, p. 218) According to the United Nations Human Development Program, development must first focus on human improvement. (Ross-Larson & Hanlon, UNDP Human Development Report 1990, p. iii) Goulet concurs, explaining that a nation’s success in development depends on “many social, cultural, political, and psychological determinants.” (Development Ethics a New Discipline, 1997, p. 1) 
+                    Designing social impact projects that are effective, inclusive, and ethical shouldn’t depend on where you live or the resources you have access to.
+                    <br></br><br></br>
+                    The First-Year Innovation & Research Experience stream Global Development & Design at the University of Maryland 
+                    brings together Global Development and Design Thinking to answer a pressing question: <i>What does sustainable worthwhile
+                    development really look like around the world, and how can we help practitioners address it ethically?</i> The field of 
+                    Development Ethics reminds us that development is never value-neutral. There are real differences between “good” 
+                    development that expands capabilities and opportunities, and maldevelopment that excludes, harms, or overlooks 
+                    the people it intends to serve. Yet, in practice, ethical considerations often appear as afterthoughts; acknowledged 
+                    verbally, but missing from the actual design of projects, programs and policies. The Development Ethics Toolkit is 
+                    being designed to fix this gap. 
                     </motion.p>
                 </div>
             </section>
@@ -53,7 +62,7 @@ const DevelopmentEthics: React.FC = () => {
             <section className="content-section">
                 <div className="content-card">
                     <h2 ref={simulationRef} className="simulation-title">
-                        Development Ethics and the Seven Worthwhile Values
+                        A Free, Open-Access Platform with Scaleability for Ethical and Human-Centered Development
                     </h2>
                     <motion.p
                         className="simulation-text"
@@ -61,7 +70,154 @@ const DevelopmentEthics: React.FC = () => {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, ease: easeOut }}
                     >
-                        Developmental ethics revolves around Jay Drydyk’s seven worthwhile values: well-being, equality, agency and empowerment, environmental sustainability, human rights, cultural freedom, and responsibility. Each of these values are important because they all work together to benefit development as a whole. Well-being, equality and agency and empowerment go hand in hand because all of them focus on how the development of the module or toolkit will directly impact the citizens in that area or the individuals utilizing the toolkit. Environmental sustainability is extremely important when developing because we want our development to be able to last. If our development tactic negatively affects the environment, it will have to be removed because we only get one earth and we need to conserve and protect it. Both human rights and cultural freedom are also extremely important to consider for development. We do not want to impinge on an individual’s rights or cultural groups freedom because it is unethical. The last value is responsibility. It is essential to be responsible when developing and in the toolkit because our proposed strategies can impact others in many ways, which needs to be accounted for. Each of these values are crucial to conserve when developing in a country, city, or area because they provide the citizens, who are being impacted, with a form of protection. 
+                    Through our partnership with the National Science Foundation's I-Corp program, this interactive, open-access online toolkit has been found to supports development practitioners, inter-governmental organizations, community-based organizations, NGOs, policy makers, academics and researchers who want to design projects, programs or policies that are not only efficient and effective, but also transformative, participatory, and ethical.
+                    <br></br><br></br>
+                    At its core, the toolkit embeds <b>ethical imperatives</b> and <b>human-centered design</b> into each stage of the design process, from understanding the people impacted to evaluating solutions around these opportunities. It provides:
+                    </motion.p>
+                    <ul className="checklist">
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="checklist-item"
+                    >
+                        <span className="checkmark">✔</span>
+                        <p> <b>Values-driven design tools</b> inspired by leading ethicists from around the world. </p>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="checklist-item"
+                    >
+                        <span className="checkmark">✔</span>
+                        <p> <b>Project planning, monitoring, and evaluation resources</b> tailored for development practitioners.</p>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="checklist-item"
+                    >
+                        <span className="checkmark">✔</span>
+                        <p> <b>An AI-powered project-development assistant</b> that uses Agentic AI to help users craft ethical project proposals, programs, or policy ideas.</p>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="checklist-item"
+                    >
+                        <span className="checkmark">✔</span>
+                        <p> <b>A dashboard that evaluates and suggests AI tools through an AI Ethics len</b> based on a proven and tested methodology.</p>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="checklist-item"
+                    >
+                        <span className="checkmark">✔</span>
+                        <p> <b>Practical exercises and frameworks</b> that strengthen collaboration, creativity, and community participation.</p>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="checklist-item"
+                    >
+                        <span className="checkmark">✔</span>
+                        <p> <b>Accessible guidance</b> built for both seasoned practitioners and community organizations in the Global South who are too often excluded from high-cost design and innovation tools.</p>
+                    </motion.li>
+                    </ul>
+                </div>
+            </section>
+
+            <section className="content-section">
+                <div className="content-card">
+                    <h2 ref={simulationRef} className="simulation-title">
+                        Why This Toolkit Matters
+                    </h2>
+                    <motion.p
+                        className="simulation-text"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, ease: easeOut }}
+                    >
+                    Around the world, social impact planners face similar challenges:
+                    </motion.p>
+                    <ul className="checklist">
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="checklist-item"
+                    >
+                        <span className="checkmark">✔</span>
+                        <p>Limited resources</p>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="checklist-item"
+                    >
+                        <span className="checkmark">✔</span>
+                        <p>Unequal access to technology</p>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="checklist-item"
+                    >
+                        <span className="checkmark">✔</span>
+                        <p>Insufficient time or training in human-centered design</p>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="checklist-item"
+                    >
+                        <span className="checkmark">✔</span>
+                        <p>Pressure to prioritize efficiency over equity</p>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="checklist-item"
+                    >
+                        <span className="checkmark">✔</span>
+                        <p>A lack of guidance for mainstreaming ethics directly into project decisions</p>
+                    </motion.li>
+                    </ul>
+                    <br></br>
+                    <motion.p
+                        className="simulation-text"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, ease: easeOut }}
+                    >
+                    The Development Ethics Toolkit helps practitioners overcome these barriers. It makes it easier to design inclusive, participatory, and locally grounded programs that reflect the voices of communities, not just the assumptions of external actors.
+                    </motion.p>
+                </div>
+            </section>
+
+            {/* --- Section 2: Seven Values --- */}
+            <section className="content-section">
+                <div className="content-card">
+                    <h2 ref={simulationRef} className="simulation-title">
+                        Our Vision
+                    </h2>
+                    <motion.p
+                        className="simulation-text"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, ease: easeOut }}
+                    >
+                    We believe that ethical development should be assessable by everyone. Our vision is a world where every development project, program or policy, whether launched by an intergovernmental organization like the United Nations or World Bank , a community organizer, an NGO, or a group of undergraduate research students advances the values of worthwhile development. 
                     </motion.p>
                 </div>
             </section>

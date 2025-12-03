@@ -41,18 +41,18 @@ export default function ExploreTools() {
             </SlideUp>
             <FadeIn>
               <p className="mt-4 text-base sm:text-lg text-gray-700 md:text-left text-center">
-                The Development Ethics Toolkit turns principles into action with practical, classroom-tested tools. Use them to plan, assess, and improve projects—without slowing momentum.
+              The <b> Development Ethics Toolkit </b> is a free, open-access platform that helps development practitioners, policy makers, and academics design, build, and test social impact projects that are effective, inclusive, and truly ethical. The toolkit incorporates values-based decision-making and human-centered design into stage of the process. With tools for project planning, evaluation, and AI-powered project-design, plus a dashboard to assess and recommend AI tools for ethical use—our platform ensures that anyone, anywhere, can create development solutions that incorporate the values of worthwhile development, while, avoiding the pitfalls of maldevelopment.
               </p>
             </FadeIn>
-            <StaggerChildren className="mt-6 space-y-3 text-gray-800 md:text-left text-left">
+            {/* <StaggerChildren className="mt-6 space-y-3 text-gray-800 md:text-left text-left">
               <SlideUp><li><strong>Ethics of Innovation</strong> — weigh benefits, risks, and trade-offs before you build.</li></SlideUp>
               <SlideUp><li><strong>Human-Centered Design</strong> — map stakeholders, needs, and harms to avoid.</li></SlideUp>
               <SlideUp><li><strong>Project Planning</strong> — milestones, roles, and accountability checklists.</li></SlideUp>
               <SlideUp><li><strong>Project Evaluation</strong> — measurable indicators for outcomes and unintended effects.</li></SlideUp>
-            </StaggerChildren>
-            <FadeIn>
+            </StaggerChildren> */}
+            {/* <FadeIn>
               <p className="mt-4 text-sm text-gray-500">All tools include templates and step-by-step guides.</p>
-            </FadeIn>
+            </FadeIn> */}
           </div>
 
           {/* RIGHT: carousel */}

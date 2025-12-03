@@ -18,6 +18,7 @@ const HumanCenteredDesign = lazy(() => import("@/pages/tools-remaining/HumanCent
 const ProjectPlanningHomepage = lazy(() => import("@/pages/project-planning/homepage"));
 const ProjectEvaluation = lazy(() => import("@/pages/tools/ProjectEvaluation"));
 const CaseStudies = lazy(() => import ("@/pages/case-studies/CaseStudies"));
+const FundingSources = lazy(() => import ("@/pages/resources/FundingSources"));
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,7 @@ const router = createBrowserRouter([
       { path: "project-planning", element: <ProjectPlanningHomepage />},
       { path: "project-evaluation", element: <ProjectEvaluation />},
       { path: "case-studies", element: <CaseStudies />},
+      { path: "funding-sources", element: <FundingSources />}
     ],
   },
 ]);

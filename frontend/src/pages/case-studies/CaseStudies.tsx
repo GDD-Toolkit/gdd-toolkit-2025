@@ -4,20 +4,59 @@
  * Worthwhile Development combines Projects + Policies; Maldevelopment is a separate segment
  */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useCaseStudiesBySegment } from "@/hooks/useCaseStudiesBySegment";
 import CaseStudiesGrid from "@/components/case-studies/CaseStudiesGrid";
-import type { CaseStudySegment } from "@/types/caseStudies";
+import CaseStudyModal from "@/components/case-studies/CaseStudyModal";
+import { fetchWorthwhile, fetchMaldevelopment } from "@/api/caseStudies";
+import type { CaseStudySegment, CaseStudy } from "@/types/caseStudies";
 
 export default function CaseStudies() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [activeSegment, setActiveSegment] = useState<CaseStudySegment>("worthwhile");
-    const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+    const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudy | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Fetch case studies for the active segment
   const { loading, error, filterBySearch } = useCaseStudiesBySegment(activeSegment);
 
   // Filter case studies based on search query
   const filteredCaseStudies = filterBySearch(searchQuery);
+
+  // Check for case study ID in URL and open modal
+  useEffect(() => {
+    const caseStudyId = searchParams.get("id");
+    if (caseStudyId) {
+      async function loadCaseStudy() {
+        try {
+          const [worthwhile, maldevelopment] = await Promise.all([
+            fetchWorthwhile().catch(() => []),
+            fetchMaldevelopment().catch(() => []),
+          ]);
+          const allCaseStudies = [...worthwhile, ...maldevelopment];
+          const found = allCaseStudies.find((cs) => cs.id === caseStudyId);
+          if (found) {
+            setSelectedCaseStudy(found);
+            setIsModalOpen(true);
+          }
+        } catch (err) {
+          console.error("Failed to load case study:", err);
+        }
+      }
+      loadCaseStudy();
+    }
+  }, [searchParams]);
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedCaseStudy(null);
+    // Remove id from URL
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.delete("id");
+    setSearchParams(newSearchParams, { replace: true });
+  };
 
   // Render content based on active segment
   const renderSegmentContent = () => {
@@ -91,11 +130,18 @@ export default function CaseStudies() {
               Maldevelopment
                                 </button>
                 </div>
-        </div>
+                    </div>
 
         {/* Grid Content */}
         {renderSegmentContent()}
       </main>
+
+      {/* Case Study Modal */}
+      <CaseStudyModal
+        caseStudy={selectedCaseStudy}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
         </div>
     );
 }

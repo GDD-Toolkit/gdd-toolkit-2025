@@ -40,6 +40,7 @@ const router = createBrowserRouter([
       { path: "project-planning", element: <ProjectPlanningHomepage />},
       { path: "project-evaluation", element: <ProjectEvaluation />},
       { path: "case-studies", element: <CaseStudies />},
+      { path: "case-studies/:id", element: <CaseStudyDetail />},
     ],
   },
 ]);

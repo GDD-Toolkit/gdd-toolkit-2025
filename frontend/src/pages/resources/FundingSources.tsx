@@ -36,9 +36,9 @@ const grants: Grant[] = [
     amount: "Grant: < $150,000",
     summary:
       "Funding is to enhance digital projects, expand reach, and support scholars at all stages, promoting inclusion and sustainability in humanistic inquiry.",
-    timePeriod: "Varies",
-    eligibility: "Universities, scholars",
-    pastAwards: "Project X (2022)",
+    timePeriod: "12-18 Months",
+    eligibility: "Projects have to be organized by a higher education institution in the U.S. The main investigator of the project must be a humanities/humanistic social sciences scholar. A project must have already completed the start-up or prototyping phase of development",
+    pastAwards: "Not Specified",
   },
   {
     id: "Marr-Munning",

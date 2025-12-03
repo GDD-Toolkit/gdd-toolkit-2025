@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FadeIn, SlideUp, ScaleIn, StaggerChildren } from "@/components/animations/Reveal";
+import { FadeIn, SlideUp, ScaleIn } from "@/components/animations/Reveal";
 
 type Tool = {
   title: string;

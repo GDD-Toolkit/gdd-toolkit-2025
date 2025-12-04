@@ -18,24 +18,110 @@ const cohorts: Record<string, Module[]> = {
         { name: "Project Planning", students: ["Mikhaela-Mari Cuadera","Mahlet Dagne","Rachel Silberg"] },
     ],
     "Cohort 2021": [
-        { name: "Module C", students: ["Eve", "Frank"] },
-        { name: "Module D", students: ["Grace", "Hank"] },
+        { 
+            "name": "Development Ethics", 
+            "students": ["PRM: Cameron Busser", "Jessica Chernoff", "Samira Mirza", "Juliana Woods", "Anastasia Katsafanas", "Nadia Panni", "Madeline Keen", "Isaiah Winger"] 
+        },
+        { 
+            "name": "Ethics of Innovation", 
+            "students": ["PRM: Raya Seid", "Ryan Bassett", "Steven Berit", "Mirabella Hitzges", "Petra Zika"] 
+        },
+        { 
+            "name": "Human Centered Design", 
+            "students": ["PRM: Courtney Davidson", "Tara Lui", "Madeline Omu-Ray"] 
+        },
+        { 
+            "name": "Human Rights & Capabilities", 
+            "students": ["PRM: Roma Sheth", "Jeremy Christian Mccallum", "Daniela Nemi", "Jada Smallwood", "Olivia Wolfson"] 
+        },
+        { 
+            "name": "Infrastructure and Interface", 
+            "students": ["PRM: Shivasree Margam", "Brett Caplan", "Blen Mulugeta", "Sharon Zhang"] 
+        },
+        { 
+            "name": "Marketing & Outreach", 
+            "students": ["PRM: Madeline Merrill", "Nikita Bandarupalli", "Sophia Eitel", "Ava Reiner", "Alexandra Rogan", "Khushi Shah"] 
+        },
+        { 
+            "name": "Project Planning", 
+            "students": ["PRM: Mikhaela Mari Cuadera", "Emma Orange", "Kelan Shah", "Zoe Singer", "Joseph Udovich"] 
+        }
     ],
     "Cohort 2022": [
-        { name: "Module E", students: ["Ivy", "Jack"] },
-        { name: "Module F", students: ["Karen", "Leo"] },
+        { 
+            "name": "Development Ethics", 
+            "students": ["PRM: Zayna", "Tomomi Hayashi", "Andrew Wallen", "Morgan Borders", "Rohin Mishra", "Juliette Corseri"] 
+        },
+        { 
+            "name": "Ethics of Innovation", 
+            "students": ["PRM: Steven", "Henry Matthew Birger", "Drew Roland Durst", "Edward Rizkilla", "Christopher Li"] 
+        },
+        { 
+            "name": "Human Centered Design", 
+            "students": ["PRM: Tara Lui", "Ashley Chau", "Jennifer Chiang", "Jenna Nagie", "Fe Eugenie Batoon"] 
+        },
+        { 
+            "name": "Maldevelopment", 
+            "students": ["PRM: Ethan", "Bailey Sullivan", "Frances Chen", "Joseph Diaz", "Sophie Garcia"] 
+        },
+        { 
+            "name": "Infrastructure and Interface", 
+            "students": ["PRM: Shiv", "Jessica Nguyen", "Zoe Cheng", "Evan Hardy", "Rory Rutledge", "Joshua Gabriel Fitch"] 
+        },
+        { 
+            "name": "Marketing & Outreach", 
+            "students": ["PRM: Rylan", "Ezinne Uzoho", "Nick Murray", "Emily Chung", "Sarah Meklir"] 
+        },
+        { 
+            "name": "Project Planning", 
+            "students": ["PRM: Mikhaela", "Sarah Dominguez", "Haley Robinson", "Jordan Snarski"] 
+        }
     ],
     "Cohort 2023": [
-        { name: "Module G", students: ["Mia", "Nate"] },
-        { name: "Module H", students: ["Olivia", "Paul"] },
+        { 
+            "name": "Development Ethics", 
+            "students": ["PRM: Bailey Sullivan", "Mayank Barnwal", "Christian Galeano Ramos", "Anderson Lemus-Del Cid", "Ananya Malipeddi"] 
+        },
+        { 
+            "name": "Operational Protocols", 
+            "students": ["PRM: Miral Mohammed", "Swaminathan Gayatri Lnu", "Colin Freas", "Alex Krucoff", "Miguel Queen"] 
+        },
+        { 
+            "name": "Human Centered Design", 
+            "students": ["PRM: Ashley Chau", "Wending Zhang", "Rachel Odumade", "Grace Liao"] 
+        },
+        { 
+            "name": "Project Evaluation", 
+            "students": ["PRM: Angie Nguyen", "Emilia Guzman", "Tobias West", "Regina Noel Kelly Hrabinski"] 
+        },
+        { 
+            "name": "Infrastructure and Interface", 
+            "students": ["PRM: Jessica Nguyen", "Oluwatobiloba Adegbaju", "Ojie Okodogbe", "Neha Veeragandham", "Khardiatou Wane", "Bodhi Getsug"] 
+        },
+        { 
+            "name": "Marketing & Outreach", 
+            "students": ["PRM: Emily Chung", "Ozioma Farrah Chigbo", "Lakayla James", "Caroline Meury", "Isaiah Ragsdale"] 
+        },
+        { 
+            "name": "Project Planning", 
+            "students": ["PRM: Quentin Hoglund", "Amisiyas Seyoum", "Niharika Sur", "Guhan Pradeep", "Julieanna Burke", "Peter Delalio"] 
+        }
     ],
     "Cohort 2024": [
         { name: "Module I", students: ["Quinn", "Ray"] },
         { name: "Module J", students: ["Sophia", "Tom"] },
     ],
     "Cohort 2025": [
-        { name: "Module K", students: ["Uma", "Victor"] },
-        { name: "Module L", students: ["Wendy", "Xander"] },
+        { name: "AI Development", students: ["PRM: Krishnan Tholkappian", "Youssef Ali Ahmed", "Nakshatra Hiray", "Siddhant Jain", "Richard Thomas", "Esha Vigneswaran"]},
+        { name: "AI Ethics", students: ["PRM: Justin Jones", "William Bachran", "Zoey Katz", "Ashlyn Wu", "Anna Howell"] },
+        { name: "Human Centered Design", students: ["PRM: Rowan Kuske", "Donovan Campos", "Isabella Canlas", "Sumer Elsalawi", "Arvind Kakanavaram", "Madeline Namias"] },
+        { name: "Infrastructure and Interface", students: ["PRM: Rohan Tadisetty", "Saikousil Tirumalasetty", "Raymond Wu"] },
+        { name: "Maldevelopment", students: ["PRM: Eugene Choi", "Emelia Adler", "Lexi Bernstein", "Daniella Hikin", "Grace Wieber"] },
+        { name: "Marketing and Outreach", students: ["PRM: Sabeen Kirwi", "Rory Gilmore", "Nolan Rogalski", "Darian Tamami", "Sophia Tamayo", "Nevan Vando"] },
+        { name: "Project Evaluation", students: ["PRM: Jiun Park", "Avery Demarco", "Alia Mubagal"] },
+        { name: "Project Planning", students: ["PRM: Ruth Whitehouse", "Jaspreet Sonu", "Neeraja Yasam"] },
+        { name: "Pro Public Policy", students: ["PRM: Shirin Saberi", "Antonella Almendariz", "Mitchell Kuta", "Lexi Schwartz", "Nola Tischler"] },
+        { name: "Training and Knowledge Development", students: ["PRM: Javon Lecky", "MeiMei Castranova", "Nora Grennon", "Eric Li"] },
     ],
 };
 

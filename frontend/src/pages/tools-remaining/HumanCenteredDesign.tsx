@@ -295,13 +295,13 @@ export default function HumanCenteredDesign() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: easeOut }}
           >
+          </motion.p>
           <ul className="bullet-Point-List">
             <li> <b>Technology:</b> Designing user-friendly apps, websites, and digital tools that people can navigate without frustration.</li>
-            <li> <b>Education:</b> Creating curriculams, learning materials, and classroom practices that meet learners where they are and support diverse learning needs.</li>
+            <li> <b>Education:</b> Creating curricula, learning materials, and classroom practices that meet learners where they are and support diverse learning needs.</li>
             <li> <b>Public Policy:</b> Crafting policies and services that reflect how people actually live, and that reduce barriers to access and participation.</li>
             <li><b>Manufacturing & Product Design:</b> Developing physical products that solve everyday problems, fit into real routines, and can be used safely and comfortably.</li>
           </ul>
-          </motion.p>
         </section>
       </div>
       <div className="fourth-Container">

@@ -7,6 +7,9 @@ import dmadvData from "./tools_data/dmadv.json";
 import dmediData from "./tools_data/dmedi.json";
 import strategycanvasData from "./tools_data/strategycanvas.json";
 import gapanalysisData from "./tools_data/gapanalysis.json";
+import pughchartData from "./tools_data/pughchart.json";
+import montecarloData from "./tools_data/montecarlo.json";
+import forceanalysisData from  "./tools_data/forceanalysis.json";
 import ToolModal from "./ToolModal";
 
 const ProjectPlanning: React.FC = () => {
@@ -19,6 +22,7 @@ const ProjectPlanning: React.FC = () => {
 
     type Bullet = {
         text: string;
+        image?: string;
         sub_bullets: Bullet[];
     }
 
@@ -39,7 +43,7 @@ const ProjectPlanning: React.FC = () => {
     }
 
     // === Tools Data ===
-    const tools: ProjectPlanningTool[] = [sipocData, garvins8Data, dmadvData, dmediData, strategycanvasData, gapanalysisData];
+    const tools: ProjectPlanningTool[] = [sipocData, garvins8Data, dmadvData, dmediData, strategycanvasData, gapanalysisData, pughchartData, montecarloData, forceanalysisData];
     // === Search State ===
     const [search, setSearch] = useState("");
     // === Modal State ===

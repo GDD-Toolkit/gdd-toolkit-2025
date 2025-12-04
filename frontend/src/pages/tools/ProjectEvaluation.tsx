@@ -159,7 +159,7 @@ const ProjectEvaluation: React.FC = () => {
                 </div>
             </section>
 
-            {/* --- Section 3: What is Project Evaluation --- */}
+            {/* --- Section 3: What is Project Evaluation ---
             <section className="content-section">
                 <div className="content-card">
                     <h2 ref={simulationRef} className="simulation-title">
@@ -183,7 +183,7 @@ const ProjectEvaluation: React.FC = () => {
                     })}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* --- Section 4: Normative Approach --- */}
             <section className="content-section">

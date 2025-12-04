@@ -2,6 +2,7 @@ import "./ToolModal.css";
 
 type Bullet = {
     text: string;
+    image?: string;
     sub_bullets: Bullet[];
 };
 
@@ -152,24 +153,50 @@ export default function ToolModal({
 }
 
 function BulletList({ bullets, isLink }: { bullets: Bullet[], isLink?: boolean }) {
+    // Recursive function to render bullets and all nested sub-bullets
+    const renderBullet = (b: Bullet) => (
+        <>
+            {/* Bullet text */}
+            {isLink ? (
+                <a href={b.text} target="_blank" rel="noopener noreferrer">
+                    {b.text}
+                </a>
+            ) : (
+                b.text
+            )}
+
+            {/* Recursive sub-bullets */}
+            {b.sub_bullets.length > 0 && (
+                <ul className="sub-bullet-list">
+                    {b.sub_bullets.map((sb, j) => (
+                        <li key={j}>
+                            {renderBullet(sb)}
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+            {/* Image after all nested sub-bullets */}
+            {b.image && (
+                <img
+                    src={b.image}
+                    alt="Bullet illustration"
+                    style={{
+                        display: "block",
+                        marginTop: "0.5rem",
+                        maxWidth: "100%",
+                        borderRadius: "0.5rem",
+                    }}
+                />
+            )}
+        </>
+    );
+
     return (
         <ul className="bullet-list">
             {bullets.map((b, i) => (
                 <li key={i}>
-                    {isLink ? (
-                        <a href={b.text} target="_blank" rel="noopener noreferrer">
-                            {b.text}
-                        </a>
-                    ) : (
-                        b.text
-                    )}
-                    {b.sub_bullets.length > 0 && (
-                        <ul className="sub-bullet-list">
-                            {b.sub_bullets.map((sb, j) => (
-                                <li key={j}>{isLink ? <a href={sb.text} target="_blank" rel="noopener noreferrer">{sb.text}</a> : sb.text}</li>
-                            ))}
-                        </ul>
-                    )}
+                    {renderBullet(b)}
                 </li>
             ))}
         </ul>

@@ -85,15 +85,15 @@ export default function CollapsibleQuizQuestion({
         </ul>
       )}
       {/* Feedback box shown after selecting an answer */}
-      {selected !== null && (
+      {selected != null && (
         <div
           role="status"
           aria-live="polite"
-          className={`explanation-Box${                                                 
-            selected === correctIndex ? "green-Correct" : "red-Incorrect"
+          className={`explanation-Box ${                                                 
+            selected == correctIndex ? "green-Correct" : "red-Incorrect"
           }`}
         >
-          {selected === correctIndex ? (
+          {selected == correctIndex ? (
             <div>
               <p className="semiBold">Correct!</p>
               <p className="small-Text">{correctExplanation}</p>

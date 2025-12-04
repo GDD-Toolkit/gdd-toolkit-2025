@@ -295,7 +295,7 @@ export default function HumanCenteredDesign() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: easeOut }}
           >
-          <ul className="list-disc pl-6 text-gray text-left space-y-3 mt-5">
+          <ul className="bullet-Point-List">
             <li> <b>Technology:</b> Designing user-friendly apps, websites, and digital tools that people can navigate without frustration.</li>
             <li> <b>Education:</b> Creating curriculams, learning materials, and classroom practices that meet learners where they are and support diverse learning needs.</li>
             <li> <b>Public Policy:</b> Crafting policies and services that reflect how people actually live, and that reduce barriers to access and participation.</li>

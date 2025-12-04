@@ -1,8 +1,12 @@
 import { motion, easeOut} from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState,} from "react";
+import {ArrowUp} from "lucide-react";
+
 import HCDSurvey from "@/assets/images/HCD-Survey.png";
 import HCDPersona from "@/assets/images/HCD-Persona.png"
+
 import "./HumanCenteredDesign.css";
+import HumanCenteredDesignQuiz from "./HumanCenteredDesignQuiz";
 
 const bannerVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -12,6 +16,16 @@ const bannerVariants = {
 export default function HumanCenteredDesign() {
  
   const [selectedCapsule, setSelectedCapsule] = useState<string | null>(null);
+
+  // Scroll-to-top button
+  const [showScroll, setShowScroll] = useState(false);
+  useEffect(() => {
+    const onScroll = () => {
+      setShowScroll(window.scrollY > window.innerHeight * 0.5);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div className="entire-Container">
@@ -94,14 +108,14 @@ export default function HumanCenteredDesign() {
       {/* Top 5 Capsules and Drop Down */}
       <div className="top-Capsules-Container">
 
-        {/* Emphasize Capsule */}
+        {/* Empathize Capsule */}
       <section className="top-Capsule">
         <div
-          onClick={() => setSelectedCapsule("emphasize")}
+          onClick={() => setSelectedCapsule("empathize")}
           className="top-Capsules-Styling"
         >
           <h2 className="capsule-Header">
-            Emphasize
+            Empathize
           </h2>
         </div>
         </section>
@@ -159,7 +173,7 @@ export default function HumanCenteredDesign() {
       {selectedCapsule && (
       <div className="bottom-Info-Holder">
         <div className="bottom-Content-Box">
-        {selectedCapsule== "emphasize" && (
+        {selectedCapsule== "empathize" && (
         <div>
           <p>
             In order to properly implement Human-Centered Design principles, it is
@@ -235,7 +249,171 @@ export default function HumanCenteredDesign() {
         </div>
       </div>
       )}
-      <br></br>
+      <div className="third-Container">
+        <section className="white-Box">
+          <h2 className="subheading">
+            Human Centered Design as a Whole
+          </h2>
+          <motion.p
+            className="white-Box-Text"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: easeOut }}
+          >
+            <b>Human-Centered Design (HCD)</b> is an approach to creating projects, products, and policies that starts with people and stays with them throughout the entire design process. 
+            Instead of designing for communities from a distance, HCD focuses on designing with them—listening to their experiences, inviting their input, and treating them as experts in their own lives.
+          </motion.p>
+          <motion.p
+            className="white-Box-Text"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: easeOut }}
+          >
+            In practice, this means that once a problem is identified, designers begin by learning directly from the people affected. 
+            Through conversations, observations, and other forms of engagement, they surface real needs, everyday challenges, and existing strengths. These insights shape how the problem is framed and what directions are explored.
+             As ideas are generated and tested, community members continue to react, critique, and co-create, helping refine solutions so they are understandable, usable, and genuinely helpful.
+          </motion.p>
+          <motion.p
+            className="white-Box-Text"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: easeOut }}
+          >
+            Done well, HCD can make material more accessible, build trust, and create a sense of shared ownership over the outcome. 
+            It doesn’t guarantee perfect solutions, but it does ensure that people’s voices, contexts, and constraints are central rather than an afterthought.
+          </motion.p>
+        </section>
+      </div>
+      <div className="fourth-Container">
+        <section className="white-Box">
+          <h2 className="subheading2">
+            Fields That Commonly Use HCD Principles Include:
+          </h2>
+          <motion.p
+            className="white-Box-Text"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: easeOut }}
+          >
+          <ul className="list-disc pl-6 text-gray text-left space-y-3 mt-5">
+            <li> <b>Technology:</b> Designing user-friendly apps, websites, and digital tools that people can navigate without frustration.</li>
+            <li> <b>Education:</b> Creating curriculams, learning materials, and classroom practices that meet learners where they are and support diverse learning needs.</li>
+            <li> <b>Public Policy:</b> Crafting policies and services that reflect how people actually live, and that reduce barriers to access and participation.</li>
+            <li><b>Manufacturing & Product Design:</b> Developing physical products that solve everyday problems, fit into real routines, and can be used safely and comfortably.</li>
+          </ul>
+          </motion.p>
+        </section>
+      </div>
+      <div className="fourth-Container">
+        <section className="white-Box">
+          <motion.p
+            className="white-Box-Text"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: easeOut }}
+          >
+            <b>Development ethics</b> deepens human-centered design by asking not only “Is this desirable and usable?” but also “Is this just, dignifying, and genuinely worthwhile for people’s lives?” 
+            While HCD focuses on understanding users’ experiences and designing with them, development ethics raises questions about power, agency, justice, and long-term well-being. 
+            It asks who defines the “problem,” who benefits, who bears the risks, and whose voices are missing. 
+            By combining HCD with development ethics, practitioners move beyond creating solutions that are merely efficient or appealing and instead design projects, programs, and policies that expand 
+            people’s capabilities, respect their autonomy, and avoid reproducing harm or inequality. 
+            In this toolkit, development ethics is not an add-on—it is the lens that shapes every stage of the HCD process.
+          </motion.p>
+        </section>
+      </div>
+      <div className="quiz-Title-Container">
+        <section className="white-Box">
+          <h2 className="subheading">
+            Human-Centered Design Quiz
+          </h2>
+          <motion.p
+            className="white-Box-Text"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: easeOut }}
+          >
+            The following quiz will test you on common Human-centered design knowledge and terms.
+          </motion.p>
+        </section>
+      </div>
+      {/* Quiz Content Below */}
+      <div className="quiz-Container">
+        <HumanCenteredDesignQuiz
+          question="Question 1: What is not a key principle of human centered design?"
+          options={[
+            "Understanding end users of a product",
+            "Empathy, Inclusion, Collaboration",
+            "Involving users throughout design process",
+            "Focusing on just technology, not humans",
+          ]}
+          correctIndex={3}
+          correctExplanation="Human-centered design does not focus solely on developing technology; considering human opinions is the most important part of the mindset. "
+        />
+        <HumanCenteredDesignQuiz
+          question="Question 2: Which is not a difference between human-centered design and design thinking?"
+          options={[
+            "Human-centered design is focused on improving usability of a product, while design thinking can be used to improve a larger problem",
+            "There is no difference between human-centered design and design thinking",
+            "Design thinking leans more on ambiguity to explore more solutions, while human-centered design seeks to find a specific solution to a problem",
+            "Human-centered design is a mindset, while design thinking is a process",
+          ]}
+          correctIndex={1}
+          correctExplanation="Design thinking and human-centered design are not the same thing. People use the design thinking process to develop ideas relating to human-centered design, but human-centered design is its own view on looking at problems."
+        />
+        <HumanCenteredDesignQuiz
+          question="Question 3: Which of the following is NOT part of the 5-Step D.School model?"
+          options={[
+            "Define",
+            "Discuss",
+            "Prototype",
+            "Ideate",
+          ]}
+          correctIndex={1}
+          correctExplanation="The 5 steps are: Empathize, Define, Ideate, Prototype, Test"
+          />
+          <HumanCenteredDesignQuiz
+          question="Question 4: In the “Empathize” phase, designers primarily focus on:"
+          options={[
+            "Testing prototypes",
+            "Understanding users' experiences and needs",
+            "Brainstorming solution ideas",
+            "Measuring project success",
+          ]}
+          correctIndex={1}
+          correctExplanation="Understanding is the key of empathizing; all the other responses relate to human-centered design, but they have nothing to do with empathy."
+          />
+          <HumanCenteredDesignQuiz
+          question="Question 5: Which of the following is NOT a benefit of prototyping?"
+          options={[
+            "Identifying design flaws early",
+            "Saving development time",
+            "Replacing the need for user research",
+            "Gathering user feedback",
+          ]}
+          correctIndex={2}
+          correctExplanation="Prototyping helps tie ideas and receive feedback at an early stage, so it supports the research process rather than replacing it."
+          />
+           <HumanCenteredDesignQuiz
+          question="Question 6: A team is designing a new digital ID system for cash transfers. Which action BEST reflects a development ethics approach?"
+          options={[
+            "Launching the system as quickly as possible to reach more users.",
+            "Collecting as much personal data as possible 'just in case' it is useful later.",
+            "Involving community members in discussions about risks (like data misuse or exclusion), adjusting the design based on their concerns, and clearly explaining their rights.",
+            "Letting the technology vendor make all key decisions since they are the technical experts.",
+          ]}
+          correctIndex={2}
+          correctExplanation=" A development ethics approach emphasizes agency, justice, and “do no harm.” Involving community members in identifying risks, making design trade-offs transparent, and clarifying rights shows respect for dignity and helps prevent harm. Speed, data hoarding, or top-down decisions may increase efficiency but undermine ethical quality."
+          />
+      </div>
+      {showScroll && (
+        <button
+          aria-label="Scroll to top"
+          className="scroll-Up-Button"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <ArrowUp className="scroll-Up-Size" />
+        </button>
+      )}
     </div>
- );
+  );
 }

@@ -1,7 +1,7 @@
 {
     "name": "SIPOC",
-    "type": "Process Mapping",
-    "time": "Short-term",
+    "type": ["Process Mapping"],
+    "time": ["Short-term"],
     "image": "/assets/images/sipoc.png",
     "learning_obj": 
     [

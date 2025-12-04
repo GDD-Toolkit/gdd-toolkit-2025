@@ -14,19 +14,20 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-white/90">Tools</h3>
             <ul className="mt-3 space-y-2 text-sm text-white/70">
-              <li><a className="hover:text-emerald-400" href="/ethics-canvas">Ethics Canvas</a></li>
+              <li><a className="hover:text-emerald-400" href="/ai-business-ethics-canvas"> AI Business Ethics Canvas</a></li>
+              <li><a className="hover:text-emerald-400" href="/https://main.dcwwj0wxym0na.amplifyapp.com/"> AI Dashboard</a></li>
               <li><a className="hover:text-emerald-400" href="/ethics-of-innovation">Ethics of Innovation</a></li>
-              <li><a className="hover:text-emerald-400" href="/worthwhile-development">Worthwhile Development</a></li>
-              <li><a className="hover:text-emerald-400" href="/case-studies">Case Studies</a></li>
+              <li><a className="hover:text-emerald-400" href="/human-centered-design">Human Centered Design</a></li>
+              <li><a className="hover:text-emerald-400" href="/project-planning">Project Planning</a></li>
+              <li><a className="hover:text-emerald-400" href="/project-evaluation">Project Evaluation</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold text-white/90">Resources</h3>
             <ul className="mt-3 space-y-2 text-sm text-white/70">
-              <li><a className="hover:text-emerald-400" href="/project-planning">Project Planning</a></li>
-              <li><a className="hover:text-emerald-400" href="/project-evaluation">Project Evaluation</a></li>
-              <li><a className="hover:text-emerald-400" href="/assistant">AI Assistant</a></li>
+              <li><a className="hover:text-emerald-400" href="/funding-sources">Funding Sources</a></li>
+              <li><a className="hover:text-emerald-400" href="/acknowledgements">Acknowledgments</a></li>
             </ul>
           </div>
 

@@ -60,6 +60,10 @@
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     margin-top: 1rem;
+    min-width: 0;        /* prevents overflow */
+    width: 100%;         /* ensures consistent width */
+    height: auto;        /* allows different heights */
+    box-sizing: border-box;
 }
 
 .modal-section h3,
@@ -70,7 +74,9 @@
     font-weight: 700;
     text-align: center;
 }
-
+.modal-card a {
+    word-break: break-all;
+}
 /* Resource links */
 .bullet-list a {
     color: #047857;

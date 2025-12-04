@@ -2,6 +2,11 @@ import { useRef, useState } from "react";
 import { motion, easeOut } from "framer-motion";
 import "./ProjectPlanning.css";
 import sipocData from "./tools_data/sipoc.json";
+import garvins8Data from "./tools_data/garvin8.json";
+import dmadvData from "./tools_data/dmadv.json";
+import dmediData from "./tools_data/dmedi.json";
+import strategycanvasData from "./tools_data/strategycanvas.json";
+import gapanalysisData from "./tools_data/gapanalysis.json";
 import ToolModal from "./ToolModal";
 
 const ProjectPlanning: React.FC = () => {
@@ -19,8 +24,8 @@ const ProjectPlanning: React.FC = () => {
 
     type ProjectPlanningTool = {
         name: string;
-        type: string;
-        time: string;
+        type: string[];
+        time: string[];
         image: string;
         learning_obj: Bullet[];
         characteristics: Bullet[];
@@ -34,7 +39,7 @@ const ProjectPlanning: React.FC = () => {
     }
 
     // === Tools Data ===
-    const tools: ProjectPlanningTool[] = [sipocData];
+    const tools: ProjectPlanningTool[] = [sipocData, garvins8Data, dmadvData, dmediData, strategycanvasData, gapanalysisData];
     // === Search State ===
     const [search, setSearch] = useState("");
     // === Modal State ===
@@ -44,19 +49,19 @@ const ProjectPlanning: React.FC = () => {
         const term = search.toLowerCase();
         return (
             t.name.toLowerCase().includes(term) ||
-            t.type.toLowerCase().includes(term) ||
-            t.time.toLowerCase().includes(term)
+            t.type.some((ty) => ty.toLowerCase().includes(term)) ||
+            t.time.some((ti) => ti.toLowerCase().includes(term))
         );
     });
 
     // === Badge Colors ===
-    const typeColors: Record<ProjectPlanningTool["type"], string> = {
+    const typeColors: Record<string, string> = {
         "Six Sigma": "#dbeafe",
         "Process Mapping": "#fef3c7",
         "Decision Making": "#fce7f3",
     };
 
-    const timeColors: Record<ProjectPlanningTool["time"], string> = {
+    const timeColors: Record<string, string> = {
         "Short-term": "#dcfce7",
         "Long-term": "#fee2e2",
     };
@@ -158,18 +163,25 @@ const ProjectPlanning: React.FC = () => {
                         <h3 className="tool-name">{tool.name}</h3>
 
                         <div className="tool-badges">
+                        {tool.type.map((ty) => (
                             <span
+                                key={ty}
                                 className="tool-badge"
-                                style={{ backgroundColor: typeColors[tool.type] }}
+                                style={{ backgroundColor: typeColors[ty] }}
                             >
-                                {tool.type}
+                                {ty}
                             </span>
+                        ))}
+
+                        {tool.time.map((ti) => (
                             <span
+                                key={ti}
                                 className="tool-badge"
-                                style={{ backgroundColor: timeColors[tool.time] }}
+                                style={{ backgroundColor: timeColors[ti] }}
                             >
-                                {tool.time}
+                                {ti}
                             </span>
+                        ))}
                         </div>
                     </div>
                 ))}

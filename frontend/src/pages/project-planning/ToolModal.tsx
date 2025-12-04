@@ -7,8 +7,8 @@ type Bullet = {
 
 type ProjectPlanningTool = {
     name: string;
-    type: string;
-    time: string;
+    type: string[];
+    time: string[];
     image: string;
     learning_obj: Bullet[];
     characteristics: Bullet[];
@@ -28,13 +28,13 @@ export default function ToolModal({
     tool: ProjectPlanningTool;
     onClose: () => void;
 }) {
-    const typeColors: Record<ProjectPlanningTool["type"], string> = {
+    const typeColors: Record<string, string> = {
         "Six Sigma": "#dbeafe",
         "Process Mapping": "#fef3c7",
         "Decision Making": "#fce7f3",
     };
 
-    const timeColors: Record<ProjectPlanningTool["time"], string> = {
+    const timeColors: Record<string, string> = {
         "Short-term": "#dcfce7",
         "Long-term": "#fee2e2",
     };
@@ -57,18 +57,25 @@ export default function ToolModal({
                 <div className="modal-section modal-card">
                     <h3>Keywords</h3>
                     <div className="keywords-wrapper">
-                        <span
-                            className="keyword-badge"
-                            style={{ backgroundColor: typeColors[tool.type] }}
-                        >
-                            {tool.type}
-                        </span>
-                        <span
-                            className="keyword-badge"
-                            style={{ backgroundColor: timeColors[tool.time] }}
-                        >
-                            {tool.time}
-                        </span>
+                        {tool.type.map((ty) => (
+                                <span
+                                    key={ty}
+                                    className="tool-badge"
+                                    style={{ backgroundColor: typeColors[ty] }}
+                                >
+                                    {ty}
+                                </span>
+                            ))}
+
+                            {tool.time.map((ti) => (
+                                <span
+                                    key={ti}
+                                    className="tool-badge"
+                                    style={{ backgroundColor: timeColors[ti] }}
+                                >
+                                    {ti}
+                                </span>
+                            ))}
                     </div>
                 </div>
 

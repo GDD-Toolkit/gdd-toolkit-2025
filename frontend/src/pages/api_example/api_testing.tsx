@@ -34,7 +34,7 @@ export default function CohortsExample() {
 
         // Ask our API helper for the data.
         const data = await getCohorts();
-
+        console.log(data);
         // Save the results into component state.
         setCohorts(data as CohortItem[]);
       } catch (err: unknown) {

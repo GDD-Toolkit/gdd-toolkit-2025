@@ -26,6 +26,7 @@ const FundingSources = lazy(() => import("@/pages/resources/FundingSources"));
 const Podcast = lazy(() => import("@/pages/resources/Podcast"));
 const Acknowledgements = lazy(() => import("@/pages/resources/Acknowledgements"));
 const ApiTesting = lazy(() => import("@/pages/api_example/api_testing"));
+const FundingResources = lazy(() => import("@/pages/funding-resources/FundingResources"));
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,6 +56,7 @@ const router = createBrowserRouter([
       { path: "funding-sources", element: <FundingSources /> },
       { path: "podcast", element: <Podcast /> },
       { path: "acknowledgements", element: <Acknowledgements /> },
+      { path: "funding-resources", element: <FundingResources/>}
     ],
   },
 ]);

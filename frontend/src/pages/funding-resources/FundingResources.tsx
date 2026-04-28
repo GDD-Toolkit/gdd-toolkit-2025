@@ -83,12 +83,7 @@ export default function FundingsExample() {
                 Name: {grantName}, {timePeriod}
               </h2>
               <p>{description}</p>
-              {minAmount ||
-                (maxAmount && (
-                  <p>
-                    Amount: {minAmount}-{maxAmount}
-                  </p>
-                ))}
+              {(minAmount || maxAmount) && <p>Amount: {minAmount}-{maxAmount}</p>}
               <h3>Eligibility:</h3>
               <p>{eligibility}</p>
               <h3>Past Awards: {pastAwards}</h3>
